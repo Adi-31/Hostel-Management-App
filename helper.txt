@@ -1,0 +1,21 @@
+// dependencies to be installed
+- react-navigation/native
+- react-navigation/stack
+
+// setup prettier
+
+// connect with firebase
+
+
+// user navigation
+login -> Menu page -> select food -> cart page -> confirm selection
+
+
+// Menu page components
+ - Header component
+    - Greet user text (left)
+    - Profile picture (right)
+ - Main Section
+    - Search bar
+    - List the available food section-wise - dropdown for each (recommended at the top, bread items, rice items)
+ - Bottom Navbar (Menu(active), Orders, Profile)
