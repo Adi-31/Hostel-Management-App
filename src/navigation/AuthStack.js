@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Menu = () => {
+const AuthStack = () => {
   return (
     <View>
-      <Text>Menu</Text>
+      <Text>AuthStack</Text>
     </View>
   );
 };
 
-export default Menu;
+export default AuthStack;
