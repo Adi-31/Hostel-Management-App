@@ -5,7 +5,11 @@ import { CircleButton } from "./Button";
 const Header = () => {
   return (
     <View
-      style={{ flexDirection: "row", height: 75, backgroundColor: "#3358F9" }}
+      style={{
+        flexDirection: "row",
+        height: 75,
+        backgroundColor: "#3358F9",
+      }}
     >
       {/* left side text  */}
       <View

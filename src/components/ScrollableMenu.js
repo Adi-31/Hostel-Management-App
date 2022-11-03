@@ -59,6 +59,18 @@ const listOfTitles = [
     id: 3,
     title: "Rice items",
   },
+  {
+    id: 4,
+    title: "Recommended",
+  },
+  {
+    id: 5,
+    title: "Bread items",
+  },
+  {
+    id: 6,
+    title: "Rice items",
+  },
 ];
 
 //  change the name of this header
@@ -193,6 +205,40 @@ const MenuItem3 = () => (
   </View>
 );
 
+const RightItem = () => {
+  // const [buttonClicked, setfirst] = useState(second);
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "green",
+        padding: 7,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      {/* add icon  */}
+
+      <TouchableOpacity
+        style={{
+          width: 40,
+          height: 40,
+          backgroundColor: "limegreen",
+          borderRadius: 8,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        onPress={() => {
+          console.log("button pressed");
+        }}
+      >
+        <Text style={{ fontSize: 25 }}>+</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
 const MainCard = ({ item }) => (
   <View
     style={{
@@ -234,33 +280,7 @@ const MainCard = ({ item }) => (
         <Text>Center item</Text>
       </View>
       {/* right item  */}
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "green",
-          padding: 7,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {/* add icon  */}
-
-        <TouchableOpacity
-          style={{
-            width: 40,
-            height: 40,
-            backgroundColor: "limegreen",
-            borderRadius: 8,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          onPress={() => {
-            console.log("button pressed");
-          }}
-        >
-          <Text style={{ fontSize: 25 }}>+</Text>
-        </TouchableOpacity>
-      </View>
+      <RightItem />
     </View>
   </View>
 );
@@ -273,8 +293,13 @@ const ScrollableMenu = () => {
       data={listOfTitles}
       keyExtractor={(item) => item.id}
       renderItem={MainCard}
-      style={{ backgroundColor: "white", paddingHorizontal: 10 }}
+      style={{
+        backgroundColor: "white",
+        paddingHorizontal: 10,
+        // marginBottom: 60,
+      }}
       ListHeaderComponent={Header}
+
       // ListFooterComponent={Cards}
     />
     // </ScrollView>
