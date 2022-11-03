@@ -1,8 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Home from "../components/Home";
-import Details from "../components/Details";
-import { StatusBar } from "expo-status-bar";
+import { Home, Details } from "../components";
 
 const Stack = createStackNavigator();
 

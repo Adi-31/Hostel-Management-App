@@ -26,3 +26,12 @@
     />
   </View>
 </View>;
+
+// card snippet
+// <FlatList
+//   data={menu}
+//   keyExtractor={(item) => item.id}
+//   renderItem={({ item }) => <Text>{item.title}</Text>}
+//   style={{ backgroundColor: "white", width: "100%", padding: 10 }}
+//   ListHeaderComponent={cardTitle}
+// />

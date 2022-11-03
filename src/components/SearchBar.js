@@ -11,7 +11,7 @@ const SearchBar = () => {
           backgroundColor: "gray",
           paddingHorizontal: 12,
           paddingVertical: 10,
-          marginHorizontal: 10,
+          // marginHorizontal: 10,
           marginVertical: 15,
           borderRadius: 10,
           opacity: 0.7,
