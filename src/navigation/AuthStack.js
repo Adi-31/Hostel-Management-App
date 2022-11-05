@@ -1,11 +1,23 @@
 import { View, Text } from "react-native";
-import React from "react";
+import Splash from "./Splash";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import GetStarted from "./GetStarted";
 
-const AuthStack = () => {
+const Stack = createStackNavigator();
+const AuthStack = ({ isSignedIn }) => {
   return (
-    <View>
-      <Text>AuthStack</Text>
-    </View>
+    <Stack.Navigator
+      initialRouteName="Splash"
+      screenOptions={{ headerShown: false }}
+    >
+      <Stack.Screen name="Splash" component={Splash} />
+      <Stack.Screen
+        name="GetStarted"
+        component={GetStarted}
+        isSignedIn={isSignedIn}
+      />
+    </Stack.Navigator>
   );
 };
 

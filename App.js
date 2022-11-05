@@ -1,6 +1,5 @@
-import { Platform, Text, View } from "react-native";
+import { Platform } from "react-native";
 import Provider from "./src/navigation";
-// import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { SafeAreaView } from "react-native";
 
 const App = () => {
@@ -13,9 +12,6 @@ const App = () => {
       }}
     >
       <Provider />
-      {/* <View style={{ backgroundColor: "blue" }}>
-        <Text>Hello</Text>
-      </View> */}
     </SafeAreaView>
   );
 };

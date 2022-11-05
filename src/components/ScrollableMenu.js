@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  ScrollView,
   FlatList,
   Image,
   StyleSheet,
@@ -13,7 +12,7 @@ import { porotta, chappathi, dosa } from "../constants/assets";
 import SearchBar from "./SearchBar";
 import AddIcon from "../assets/images/AddIcon.svg";
 import { useState } from "react";
-import { CardAnimationContext } from "@react-navigation/stack";
+import { COLORS } from "../constants/theme";
 
 const menu = [
   {
@@ -49,7 +48,7 @@ const menu = [
 const listOfTitles = [
   {
     id: 1,
-    title: "Recommended",
+    title: "✨Recommended",
   },
   {
     id: 2,
@@ -59,29 +58,17 @@ const listOfTitles = [
     id: 3,
     title: "Rice items",
   },
-  {
-    id: 4,
-    title: "Recommended",
-  },
-  {
-    id: 5,
-    title: "Bread items",
-  },
-  {
-    id: 6,
-    title: "Rice items",
-  },
 ];
 
 //  change the name of this header
 const Header = () => (
-  <View style={{ backgroundColor: "white" }}>
+  <View style={{ paddingHorizontal: 10, backgroundColor: "white" }}>
     <SearchBar />
     <Text
       style={{
         fontSize: 30,
         // marginLeft: 10,
-        fontWeight: "600",
+        fontWeight: "700",
         marginBottom: 10,
       }}
     >
@@ -90,129 +77,18 @@ const Header = () => (
   </View>
 );
 
-const MenuItem1 = () => (
-  <View
-    style={{
-      flex: 1,
-      flexDirection: "row",
-      backgroundColor: "yellow",
-      marginVertical: 7,
-      padding: 8,
-    }}
-  >
-    <Image source={porotta} />
-    <View
-      style={{ flexDirection: "column", marginBottom: 8, marginHorizontal: 6 }}
-    >
-      <Text style={{ fontSize: 18, fontWeight: "600", marginVertical: 4 }}>
-        {menu[0].title}
-      </Text>
-      <Text style={{ fontSize: 12, fontWeight: "400", marginVertical: 4 }}>
-        {menu[0].details}
-      </Text>
-      <Text style={{ fontSize: 16, fontWeight: "600" }}>₹{menu[0].cost}</Text>
-    </View>
-    <View
-      style={{
-        backgroundColor: "green",
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        height: 38,
-        width: 38,
-        marginTop: 10,
-        borderRadius: 10,
-      }}
-    >
-      <Text style={{ fontSize: 32 }}>+</Text>
-    </View>
-  </View>
-);
-const MenuItem2 = () => (
-  <View
-    style={{
-      flex: 1,
-      flexDirection: "row",
-      backgroundColor: "yellow",
-      marginVertical: 7,
-      padding: 8,
-    }}
-  >
-    <Image source={chappathi} />
-    <View
-      style={{ flexDirection: "column", marginBottom: 8, marginHorizontal: 6 }}
-    >
-      <Text style={{ fontSize: 18, fontWeight: "600", marginVertical: 4 }}>
-        {menu[1].title}
-      </Text>
-      <Text style={{ fontSize: 12, fontWeight: "400", marginVertical: 4 }}>
-        {menu[1].details}
-      </Text>
-      <Text style={{ fontSize: 16, fontWeight: "600" }}>₹{menu[1].cost}</Text>
-    </View>
-    <View
-      style={{
-        backgroundColor: "green",
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        height: 38,
-        width: 38,
-        marginTop: 10,
-        borderRadius: 10,
-      }}
-    >
-      <Text style={{ fontSize: 32 }}>+</Text>
-    </View>
-  </View>
-);
-const MenuItem3 = () => (
-  <View
-    style={{
-      flex: 1,
-      flexDirection: "row",
-      backgroundColor: "yellow",
-      marginVertical: 7,
-      padding: 8,
-    }}
-  >
-    <Image source={dosa} />
-    <View
-      style={{ flexDirection: "column", marginBottom: 8, marginHorizontal: 6 }}
-    >
-      <Text style={{ fontSize: 18, fontWeight: "600", marginVertical: 4 }}>
-        {menu[2].title}
-      </Text>
-      <Text style={{ fontSize: 12, fontWeight: "400", marginVertical: 4 }}>
-        {menu[2].details}
-      </Text>
-      <Text style={{ fontSize: 16, fontWeight: "600" }}>₹{menu[2].cost}</Text>
-    </View>
-    <View
-      style={{
-        backgroundColor: "green",
-        // flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        height: 30,
-        width: 30,
-        // marginTop: 10,
-        borderRadius: 10,
-      }}
-    >
-      <Text style={{ fontSize: 32 }}>+</Text>
-    </View>
-  </View>
-);
-
 const RightItem = () => {
-  // const [buttonClicked, setfirst] = useState(second);
+  const cartItemsArray = [];
+  const [cartItems, setCartItems] = useState(cartItemsArray);
+  const icon1 = "+";
+  const icon2 = "✔️";
+  const [buttonPressed, setButtonPressed] = useState(false);
 
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: "green",
+        backgroundColor: "white",
         padding: 7,
         alignItems: "center",
         justifyContent: "center",
@@ -224,85 +100,110 @@ const RightItem = () => {
         style={{
           width: 40,
           height: 40,
-          backgroundColor: "limegreen",
+          backgroundColor: "#32BA7C26",
           borderRadius: 8,
           alignItems: "center",
           justifyContent: "center",
+          // opacity: 0.15,
+          // position: "absolute",
+          margin: 0,
         }}
         onPress={() => {
           console.log("button pressed");
+          // setIcon("✔️");
+          setButtonPressed((buttonPressed) => !buttonPressed);
+          buttonPressed ? setCartItems(cartItemsArray.push("porotta")) : null;
+          console.log(cartItemsArray);
         }}
       >
-        <Text style={{ fontSize: 25 }}>+</Text>
+        <Text
+          style={{
+            fontSize: 25,
+            color: COLORS.green,
+            margin: 0,
+            padding: 0,
+            // backgroundColor: "red",
+          }}
+        >
+          {buttonPressed ? icon1 : icon2}
+        </Text>
       </TouchableOpacity>
     </View>
   );
 };
 
+const ChildCard = ({ items }) => (
+  <View
+    style={{
+      flex: 1,
+      flexDirection: "row",
+      flexWrap: "wrap",
+    }}
+  >
+    {/* left item  */}
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "white",
+        padding: 7,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Image source={porotta} />
+    </View>
+    {/* center item  */}
+    <View
+      style={{
+        flex: 2,
+        backgroundColor: "white",
+        padding: 7,
+        paddingVertical: 10,
+        justifyContent: "center",
+      }}
+    >
+      <Text style={{ fontSize: 18, fontWeight: "700" }}>Title</Text>
+      <Text style={{ fontSize: 14 }}>Description</Text>
+      <Text style={{ fontSize: 20, color: COLORS.green, fontWeight: "700" }}>
+        $80
+      </Text>
+    </View>
+    {/* right item  */}
+    <RightItem />
+  </View>
+);
 const MainCard = ({ item }) => (
   <View
     style={{
       width: "100%",
-      marginVertical: 8,
+      // marginVertical: item.id === 1 ? 0 : 8,
+      marginBottom: 8,
+      marginTop: item.id === 1 ? 8 : 0,
     }}
   >
-    <View style={{ backgroundColor: "gray", padding: 8 }}>
-      <Text style={{ fontSize: 20, fontWeight: "600" }}>{item.title} </Text>
+    <View style={{ backgroundColor: "white", padding: 10 }}>
+      <Text style={{ fontSize: 18, fontWeight: "700" }}>{item.title}</Text>
     </View>
-    <View
-      style={{
-        flex: 1,
-        flexDirection: "row",
-        flexWrap: "wrap",
-      }}
-    >
-      {/* left item  */}
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "orange",
-          padding: 7,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Image source={porotta} />
-      </View>
-      {/* center item  */}
-      <View
-        style={{
-          flex: 2,
-          backgroundColor: "blue",
-          padding: 7,
-          justifyContent: "center",
-        }}
-      >
-        <Text>Center item</Text>
-      </View>
-      {/* right item  */}
-      <RightItem />
-    </View>
+    {/* child card */}
+    <ChildCard items={item.items} />
+    <ChildCard />
+    <ChildCard />
   </View>
 );
 
 const ScrollableMenu = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    // <ScrollView style={{ flexGrow: 1 }}>
     <FlatList
       data={listOfTitles}
       keyExtractor={(item) => item.id}
       renderItem={MainCard}
       style={{
-        backgroundColor: "white",
-        paddingHorizontal: 10,
-        // marginBottom: 60,
+        backgroundColor: "#D9D9D9",
+        // paddingHorizontal: 10,
       }}
       ListHeaderComponent={Header}
-
-      // ListFooterComponent={Cards}
     />
-    // </ScrollView>
   );
 };
 
