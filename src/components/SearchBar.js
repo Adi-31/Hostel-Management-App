@@ -1,20 +1,12 @@
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, StyleSheet } from "react-native";
 import React from "react";
 
 const SearchBar = () => {
   return (
-    <View style={{ width: "100%" }}>
+    <View style={styles.conatiner}>
       <TextInput
         placeholder="🔍 Porotta, Dosa ..."
-        style={{
-          fontSize: 18,
-          backgroundColor: "#7676801F",
-          paddingHorizontal: 12,
-          paddingVertical: 10,
-          // marginHorizontal: 10,
-          marginVertical: 15,
-          borderRadius: 10,
-        }}
+        style={styles.textinput}
         placeholderTextColor="#3C3C4399"
       />
     </View>
@@ -22,3 +14,15 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+
+const styles=StyleSheet.create({
+  conatiner :{ width: "100%" } ,
+  textinput : {
+    fontSize: 18,
+    backgroundColor: "#7676801F",
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    marginVertical: 15,
+    borderRadius: 10,
+  }
+})
