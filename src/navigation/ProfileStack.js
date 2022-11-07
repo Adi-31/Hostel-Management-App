@@ -1,6 +1,7 @@
 import { View, Text, Button, SafeAreaView } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar } from "expo-status-bar";
+import ProfilePage from "../components/ProfilePage";
 
 const Home = ({ navigation }) => (
   <SafeAreaView>
@@ -23,11 +24,11 @@ const Stack = createStackNavigator();
 const ProfileStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="ProfilePage"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Details" component={Details} />
+      <Stack.Screen name="ProfilePage" component={ProfilePage} />
+      {/* <Stack.Screen name="Details" component={Details} /> */}
     </Stack.Navigator>
   );
 };
