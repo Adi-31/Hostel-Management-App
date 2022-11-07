@@ -1,13 +1,13 @@
-import { View, Text, Button, TouchableOpacity } from "react-native";
+import { View, Text, Button, TouchableOpacity, StyleSheet } from "react-native";
 import { SIZES } from "../constants/theme";
 import { CircleButton } from "./Button";
 
 const CartHeader = ({navigation}) => {
   return (
     <View
-      style={{ flexDirection: "row", height: 75, backgroundColor: "#3358F9" }}
+      style={styles.container}
     >
-      <View style={{backgroundColor: '#3358F9', flex: 1, alignItems: 'flex-start', justifyContent: 'center', paddingLeft: 10}}>
+      <View style={styles.backbutton}>
          {<TouchableOpacity
             onPress={() => navigation.navigate("Home")}
             >
@@ -15,12 +15,8 @@ const CartHeader = ({navigation}) => {
             </TouchableOpacity> }
 
       </View>
-      <View style={{backgroundColor: '#3358F9', flex: 8, alignItems: 'flex-start', justifyContent: 'center',}}>
-        <Text style={{
-            fontSize: SIZES.large * 2,
-            color: "white",
-            fontWeight: "bold",
-          }}>Cart</Text></View>
+      <View style={styles.cartheaderview}>
+        <Text style={styles.cartheadertext}>Cart</Text></View>
     
          
     </View>
@@ -28,3 +24,10 @@ const CartHeader = ({navigation}) => {
 };
 
 export default CartHeader;
+
+const styles = StyleSheet.create({
+  container : { flexDirection: "row", height: 75, backgroundColor: "#3358F9" },
+  backbutton : {backgroundColor: '#3358F9', flex: 1, alignItems: 'flex-start', justifyContent: 'center', paddingLeft: 10},
+  cartheaderview : {backgroundColor: '#3358F9', flex: 8, alignItems: 'flex-start', justifyContent: 'center',},
+  cartheadertext : {fontSize: SIZES.large * 2 ,color: "white", fontWeight: "bold",}
+})
