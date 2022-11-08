@@ -22,7 +22,7 @@ const CartList = () => {
 
         </View >
 
-        <View style={{ backgroundColor:'#32BA7C',padding:10 ,marginTop: 10,borderRadius:50,alignItems:'center',justifyContent:'center'}}>
+        <View style={{ backgroundColor:'#32BA7C',padding:10 ,margin: 10,borderRadius:10,alignItems:'center',justifyContent:'center'}}>
           <Text style={{ color:'white'}}> Confirm Order</Text>
 
 
