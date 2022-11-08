@@ -208,3 +208,7 @@ const ScrollableMenu = () => {
 };
 
 export default ScrollableMenu;
+
+const styles= StyleSheet.create({
+  
+})

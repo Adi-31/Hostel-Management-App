@@ -1,17 +1,19 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text ,TouchableOpacity,StyleSheet} from 'react-native'
 import { COLORS, SIZES } from "../constants/theme";
 import React from 'react'
 import SquareButton from './SquareBtn';
 
 export default function OptDinner() {
   return (
-    <View style={{ backgroundColor: 'white', padding: 10, marginTop: 10 }}>
-      <View style={styles.container}>
-        <SquareButton />
+    <View style={styles.container}>
+        <View style={styles.container1}>
 
-        <View style={styles.description}>
-          <Text style={{ fontSize: 25, fontWeight: 'bold' }}>Opt for Dinner</Text>
-          <Text style={{ fontSize: 10 }}>The food marked as dinner in your current cart will be marked as your prefference for dinner too </Text>
+            <View style ={styles.buttonview}>
+                <SquareButton/>
+                <Text style={styles.opt}>  Opt for Dinner</Text>
+            </View>
+            <View style ={styles.foodview}>
+            <Text style={styles.foodtext}>The food marked as dinner in your current cart will be marked as your prefference for dinner too </Text>
 
         </View>
       </View>
@@ -20,19 +22,11 @@ export default function OptDinner() {
   )
 }
 
-const styles = {
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    borderRadius: 10,
-    backgroundColor: '#F5B80D',
-    padding: 10,
-    alignItems : 'flex-start'
-  },
-  description : {
-    flex : 1,
-    flexDirection : 'column',
-  }
-
-
-}
+const styles=StyleSheet.create({
+  container :{backgroundColor:'white',padding:10,marginTop: 10} ,
+  container1 : {borderRadius:10,backgroundColor:'#F5B80D'},
+  buttonview : {flexDirection:'row',alignItems:'flex-start',justifyContent:'flex-start'},
+  opt : {fontSize:25,fontWeight:'bold'},
+  foodview : {alignItems:'center',justifyContent:'center'},
+  foodtext : {fontSize:10,marginLeft:35}
+})
