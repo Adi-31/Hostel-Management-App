@@ -16,7 +16,7 @@ const OrderStack = () => {
       initialRouteName="OrderMainScreen"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="OrderMainScreen" component={OrderMainScreen} />
+      <Stack.Screen name="OrderMainScreen" component={Order} />
 
     </Stack.Navigator>
   );
