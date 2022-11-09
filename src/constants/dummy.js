@@ -1,4 +1,4 @@
-export const menu = [
+export const RecommendedCardData = [
   {
     id: 1,
     title: "Porotta & Egg Curry",
@@ -21,8 +21,6 @@ export const menu = [
     image: "",
   },
 ];
-
-export const bottomNavBarList = ["Menu", "Orders", "Profile"];
 
 export const categories = ["Bread items", "Rice items"];
 
