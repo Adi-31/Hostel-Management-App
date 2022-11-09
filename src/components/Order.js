@@ -77,7 +77,7 @@ const OrderCard = ({ item, navigate }) => {
 
         <TouchableOpacity
           style={styles.touch}
-          onPress={() => navigate("Home")}
+          onPress={() => navigate("OrderDetails", {Itemid : element.id})}
         >
           <Text style={styles.textviewdetails}>VIEW DETAILS</Text>
         </TouchableOpacity>

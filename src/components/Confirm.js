@@ -1,7 +1,7 @@
 import { View, Text , StyleSheet} from 'react-native'
 import React from 'react'
 
-const CartList = () => {
+const Confirm = () => {
   return (
 
 <View>
@@ -34,10 +34,10 @@ const CartList = () => {
   )
 }
 
-export default CartList
+export default Confirm
 
 const styles = StyleSheet.create({
-  container : { flexDirection:'row',  backgroundColor:'#D7F4E7',padding:10,marginTop: 200},
+  container : { flexDirection:'row',  backgroundColor:'#D7F4E7',padding:10},
   subview1 : {flex:1},
   subview2 : { flex:1,alignItems:'flex-end',justifyContent:'flex-end'},
   confirmCaution : { backgroundColor:'#D7F4E7',padding:10 ,marginTop: 10 ,borderRadius:50},

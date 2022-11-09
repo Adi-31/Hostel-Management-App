@@ -1,33 +1,35 @@
 import { View, Text, Button, TouchableOpacity, StyleSheet } from "react-native";
 import { SIZES } from "../constants/theme";
-import { CircleButton } from "./Button";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 
-const CartHeader = ({navigation}) => {
+
+const OrderDetailsHeder = ({route, navigation}) => {
+ // const { Itemid } = route.params;
+  console.log(route)
   return (
     <View
       style={styles.container}
     >
       <View style={styles.backbutton}>
          {<TouchableOpacity
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("OrderMainScreen")}
             >
-            <Text>      
-               <Ionicons name="arrow-back-outline" size={32} color="white" />
-            </Text>
+            <Text>
+              <Ionicons name="arrow-back-outline" size={32} color="white" />
+           </Text>
             </TouchableOpacity> }
 
       </View>
       <View style={styles.cartheaderview}>
-        <Text style={styles.cartheadertext}>Cart</Text></View>
+        <Text style={styles.cartheadertext}>Order Id</Text></View>
     
          
     </View>
   );
 };
 
-export default CartHeader;
+export default OrderDetailsHeder;
 
 const styles = StyleSheet.create({
   container : { flexDirection: "row", height: 75, backgroundColor: "#3358F9" },

@@ -16,13 +16,16 @@ export default SquareButton
 
 const styles=StyleSheet.create({
   conatainer : {
-    width: 15,
-    height: 15,
-    backgroundColor: "#F5B80D",
-    marginLeft:10,
-    marginTop:10,
+    width: 21,
+    height: 21,
+    backgroundColor: "#FDEBBC",
+    marginTop:5,
     borderWidth:1,
     alignItems: "flex-start",
     justifyContent: 'flex-start',
+    borderRadius : 5,
+    borderWidth : 1,
+    borderColor : '#F5B80D'
+    
   }
 })

@@ -1,9 +1,9 @@
 import { useState , } from "react";
-import { FlatList, SafeAreaView, Text, TouchableOpacity, View , StyleSheet} from "react-native";
+import { FlatList, SafeAreaView, Text, TouchableOpacity, View , StyleSheet,ScrollView} from "react-native";
 import CartHeader from "./CartHeader"; 
 import CartContent from "./CartContent";
 import OptDinner from "./OptDinner";
-import CartList from "./Confirm"; 
+import Confirm from "./Confirm"; 
 
 const listOfCart = [
      {
@@ -14,6 +14,23 @@ const listOfCart = [
        id: 2,
        title: "Biriyani Rice",
      },
+     {
+      id: 1,
+      foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
+    },
+    {
+      id: 2,
+      title: "Biriyani Rice",
+    },
+    {
+      id: 1,
+      foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
+    },
+    {
+      id: 2,
+      title: "Biriyani Rice",
+    },
+ 
      
    ];
 
@@ -26,6 +43,7 @@ const Details = ({navigation}) => {
         
         
           return (
+            
             <View style={styles.container}>
               <View style={styles.container1}>
                 <Text style={styles.container2}>
@@ -61,17 +79,23 @@ const Details = ({navigation}) => {
           )
         }
      return (
+     <View style={{flex:7}}>
+      <ScrollView>
+      <View style= {{flex : 2}}>
 
-     <View>
-      <CartHeader navigation={navigation}/>
-      <FlatList data={listOfCart}
-      keyExtractor={item => item.id}
-         renderItem={CartContent}
-     />
-     <CartContent/>
-     <OptDinner/>
-     <CartList/>
-     
+        <CartHeader navigation={navigation}/>
+        <FlatList data={listOfCart}
+        keyExtractor={item => item.id}
+          renderItem={CartContent}
+      />
+      </View>
+      <View style= {{flex : 2, alignItems : 'flex-end', justifyContent : 'flex-end'}}>
+        <OptDinner/>
+      </View>
+      </ScrollView>
+      <View style= {{flex : 3 , alignItems : 'flex-end', justifyContent : 'flex-end'}}>
+        <Confirm/>
+      </View>
      </View>
      )
    
@@ -91,3 +115,6 @@ const styles= StyleSheet.create({
 
 
 })
+
+
+     

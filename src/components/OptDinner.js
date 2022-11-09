@@ -23,10 +23,10 @@ export default function OptDinner() {
 }
 
 const styles=StyleSheet.create({
-  container :{backgroundColor:'white',padding:10,marginTop: 10} ,
-  container1 : {borderRadius:10,backgroundColor:'#F5B80D'},
-  buttonview : {flexDirection:'row',alignItems:'flex-start',justifyContent:'flex-start'},
-  opt : {fontSize:25,fontWeight:'bold'},
+  container :{backgroundColor:'white',padding:10} ,
+  container1 : {borderRadius:10,backgroundColor:'#FEF4DB', borderColor: '#F5B80D', borderWidth:1,padding:7},
+  buttonview : {flexDirection:'row',alignItems:'flex-start',justifyContent:'flex-start',},
+  opt : {fontSize:25,fontWeight:'bold', color : '#F5B80D' },
   foodview : {alignItems:'center',justifyContent:'center'},
-  foodtext : {fontSize:10,marginLeft:35}
+  foodtext : {fontSize:10,marginLeft:30}
 })
