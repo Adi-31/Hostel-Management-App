@@ -30,6 +30,42 @@ const listOfCart = [
       id: 2,
       title: "Biriyani Rice",
     },
+    {
+      id: 2,
+      title: "Biriyani Rice",
+    },
+    {
+      id: 1,
+      foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
+    },
+    {
+      id: 2,
+      title: "Biriyani Rice",
+    },
+    {
+      id: 2,
+      title: "Biriyani Rice",
+    },
+    {
+      id: 1,
+      foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
+    },
+    {
+      id: 2,
+      title: "Biriyani Rice",
+    },
+    {
+      id: 2,
+      title: "Biriyani Rice",
+    },
+    {
+      id: 1,
+      foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
+    },
+    {
+      id: 2,
+      title: "Biriyani Rice",
+    },
  
      
    ];
@@ -80,10 +116,13 @@ const Details = ({navigation}) => {
         }
      return (
      <View style={{flex:7}}>
+      <View>
+        <CartHeader navigation={navigation}/>
+      </View>
       <ScrollView>
+
       <View style= {{flex : 2}}>
 
-        <CartHeader navigation={navigation}/>
         <FlatList data={listOfCart}
         keyExtractor={item => item.id}
           renderItem={CartContent}
