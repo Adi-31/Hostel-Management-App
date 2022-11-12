@@ -14,7 +14,7 @@ export default function OptDinner() {
         <View style={styles.foodview}>
           <Text style={styles.foodtext}>
             The food marked as dinner in your current cart will be marked as
-            your prefference for dinner too{" "}
+            your prefference for dinner too..{" "}
           </Text>
         </View>
       </View>
