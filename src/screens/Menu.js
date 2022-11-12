@@ -1,9 +1,8 @@
 import { View, StyleSheet } from "react-native";
-import Header from "./Header";
-import ScrollableMenu from "./ScrollableMenu";
-import ViewCart from "./ViewCart";
+import React from "react";
+import { Header, ScrollableMenu, ViewCart } from "../components";
 
-const Home = ({ navigation }) => {
+const Menu = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Header />
@@ -12,8 +11,9 @@ const Home = ({ navigation }) => {
     </View>
   );
 };
-export default Home;
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
 });
+
+export default Menu;

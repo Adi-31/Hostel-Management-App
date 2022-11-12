@@ -1,8 +1,7 @@
 import { Platform } from "react-native";
-import Provider from "./src/navigation";
+import Routes from "./src/navigation/Routes";
 import { SafeAreaView } from "react-native";
 import { COLORS } from "./src/constants/theme";
-import Ionicons from "@expo/vector-icons/Ionicons";
 
 const App = () => {
   return (
@@ -13,7 +12,7 @@ const App = () => {
         paddingTop: Platform.OS === "android" ? 30 : 0,
       }}
     >
-      <Provider />
+      <Routes />
     </SafeAreaView>
   );
 };

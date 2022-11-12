@@ -55,11 +55,10 @@ function MyTabBar({ state, descriptors, navigation }) {
         return (
           <TouchableOpacity
             accessibilityRole="button"
-            // accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
             onPress={onPress}
-            key={options.tabBarLabel}
+            key={index}
             style={{
               flex: 1,
               opacity: isFocused ? 1 : 0.4,

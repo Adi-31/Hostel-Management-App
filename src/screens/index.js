@@ -1,7 +1,7 @@
 import Cart from "./Cart";
-import Login from "./Login";
-import MenuPage from "./MenuPage";
 import Orders from "./Orders";
 import Profile from "./Profile";
+import Menu from "./Menu";
+import OrderDetails from "./OrderDetails";
 
-export { Cart, Login, MenuPage, Orders, Profile };
+export { Cart, Menu, Orders, Profile, OrderDetails };

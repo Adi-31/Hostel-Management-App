@@ -2,15 +2,12 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   SectionList,
   StatusBar,
   TextInput,
   Image,
 } from "react-native";
-import { downArrow, addIcon } from "../constants/icons";
 import { COLORS } from "../constants/theme";
-// import { porotta, chappathi, dosa } from "../constants/assets";
 import porotta from "../assets/images/porotta.png";
 import chappathi from "../assets/images/chappathi.png";
 import dosa from "../assets/images/dosa.png";
@@ -129,14 +126,9 @@ const MenuItem = ({ item }) => (
     {/* left item  */}
     <View
       style={{
-        // flex: 1,
-        // backgroundColor: "orange",
-        // justifyContent: "center",
-        // alignItems: "center",
         padding: 10,
       }}
     >
-      {/* <Text style={styles.title}>Image</Text> */}
       <Image
         source={item.img}
         resizeMode="contain"
@@ -177,9 +169,7 @@ const MenuItem = ({ item }) => (
         justifyContent: "center",
       }}
     >
-      {/* <View style={{}}> */}
       <Image source={PlusIcon} />
-      {/* </View> */}
     </View>
   </View>
 );
@@ -214,16 +204,6 @@ const MenuCardTitle = ({ section: { title } }) => (
     <View style={{ flex: 3, paddingLeft: 8 }}>
       <Text style={{ fontSize: 20, fontWeight: "700" }}>{title}</Text>
     </View>
-    {/* <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "flex-end",
-        paddingRight: 16,
-      }}
-    >
-      <Text>{downArrow}</Text>
-    </View> */}
   </View>
 );
 const ScrollableMenu = () => (

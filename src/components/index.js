@@ -5,9 +5,9 @@ import FocusedStatusBar from "./FocusedStatusBar";
 import Header from "./Header";
 import Home from "./Home";
 import Menu from "./Menu";
-import MenuCard from "./MenuCard";
 import ScrollableMenu from "./ScrollableMenu";
 import SearchBar from "./SearchBar";
+import ViewCart from "./ViewCart";
 
 export {
   Button,
@@ -17,7 +17,7 @@ export {
   Header,
   Home,
   Menu,
-  MenuCard,
   ScrollableMenu,
   SearchBar,
+  ViewCart,
 };
