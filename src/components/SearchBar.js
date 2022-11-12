@@ -17,12 +17,5 @@ export default SearchBar;
 
 const styles=StyleSheet.create({
   conatiner :{ width: "100%" } ,
-  textinput : {
-    fontSize: 18,
-    backgroundColor: "#7676801F",
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    marginVertical: 15,
-    borderRadius: 10,
-  }
+  textinput : {fontSize: 18, backgroundColor: "#7676801F", paddingHorizontal: 12, paddingVertical: 10, marginVertical: 15, borderRadius: 10, }
 })
