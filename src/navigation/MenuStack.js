@@ -12,7 +12,7 @@ const MenuStack = () => {
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="Home" component={Menu} />
-      <Stack.Screen name="Details" component={Cart} />
+      <Stack.Screen name="Cart" component={Cart} />
     </Stack.Navigator>
   );
 };

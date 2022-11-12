@@ -5,14 +5,14 @@ import SquareButton from "./SquareBtn";
 
 export default function OptDinner() {
   return (
-    <View style={styles.container}>
-      <View style={styles.container1}>
-        <View style={styles.buttonview}>
+    <View style={styles.optDinnercontainer}>
+      <View style={styles.optDinnercontainer1}>
+        <View style={styles.optDinnerbuttonview}>
           <SquareButton />
-          <Text style={styles.opt}> Opt for Dinner</Text>
+          <Text style={styles.optDinneropt}> Opt for Dinner</Text>
         </View>
-        <View style={styles.foodview}>
-          <Text style={styles.foodtext}>
+        <View style={styles.optDinnerfoodview}>
+          <Text style={styles.optDinnerfoodtext}>
             The food marked as dinner in your current cart will be marked as
             your prefference for dinner too..{" "}
           </Text>
@@ -23,14 +23,14 @@ export default function OptDinner() {
 }
 
 const styles = StyleSheet.create({
-  container: { backgroundColor: "white", padding: 10, marginTop: 10 },
-  container1: { borderRadius: 10, backgroundColor: "#F5B80D" },
-  buttonview: {
+  optDinnercontainer: { backgroundColor: "white", padding: 10, marginTop: 10 },
+  optDinnercontainer1: { borderRadius: 10, backgroundColor: "#F5B80D" },
+  optDinnerbuttonview: {
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "flex-start",
   },
-  opt: { fontSize: 25, fontWeight: "bold" },
-  foodview: { alignItems: "center", justifyContent: "center" },
-  foodtext: { fontSize: 10, marginLeft: 35 },
+  optDinneropt: { fontSize: 25, fontWeight: "bold" },
+  optDinnerfoodview: { alignItems: "center", justifyContent: "center" },
+  optDinnerfoodtext: { fontSize: 10, marginLeft: 35 },
 });

@@ -24,7 +24,7 @@ function MyTabBar({ state, descriptors, navigation }) {
             ? options.title
             : route.name;
         let icon = "";
-        if (route.name == "Menu") {
+        if (route.name == "MenuStack") {
           icon = <MenuIcon />;
         } else if (route.name == "Orders") {
           icon = <OrdersIcon />;
@@ -83,7 +83,7 @@ export default function App() {
       screenOptions={{ headerShown: false }}
       tabBar={(props) => <MyTabBar {...props} />}
     >
-      <Tab.Screen name="Menu" component={MenuStack} />
+      <Tab.Screen name="MenuStack" component={MenuStack} />
       <Tab.Screen name="Orders" component={OrderStack} />
       <Tab.Screen name="Profile" component={ProfileStack} />
     </Tab.Navigator>
