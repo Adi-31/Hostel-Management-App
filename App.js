@@ -1,6 +1,6 @@
 import { Platform } from "react-native";
 import Routes from "./src/navigation/Routes";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "./src/constants/theme";
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
       style={{
         flex: 1,
         backgroundColor: COLORS.blue,
-        paddingTop: Platform.OS === "android" ? 30 : 0,
+        paddingTop: Platform.OS === "android" ? 30 : 35,
       }}
     >
       <Routes />

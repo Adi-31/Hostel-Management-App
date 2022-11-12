@@ -5,7 +5,7 @@ import { Header, ScrollableMenu, ViewCart } from "../components";
 const Menu = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Header />
+      <Header navigation={navigation} />
       <ScrollableMenu />
       <ViewCart navigation={navigation} />
     </View>

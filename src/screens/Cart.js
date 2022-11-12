@@ -8,9 +8,9 @@ import {
   ScrollView,
 } from "react-native";
 import { SIZES } from "../constants/theme";
-// import { CircleButton } from "./Button";
+import { CircleButton, SquareButton } from "../components/Button";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import SquareButton from "../components/SquareBtn";
+// import SquareButton from "../components/SquareBtn";
 
 const listOfCart = [
   {

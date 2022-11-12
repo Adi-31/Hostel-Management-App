@@ -1,4 +1,4 @@
-import { View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity, Platform } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import MenuStack from "./MenuStack";
@@ -12,7 +12,8 @@ function MyTabBar({ state, descriptors, navigation }) {
       style={{
         flexDirection: "row",
         backgroundColor: "white",
-        height: 65,
+        height: 90,
+        paddingBottom: Platform.OS === "ios" ? 25 : 0,
       }}
     >
       {state.routes.map((route, index) => {
