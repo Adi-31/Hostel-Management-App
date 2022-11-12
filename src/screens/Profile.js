@@ -1,11 +1,11 @@
 import { View, Text } from "react-native";
-import ProfileHeader from "./ProfileHeader";
-import ProfileContent from "./ProfileContent";
-import ProfileContent2 from "./ProfileContent2";
-import ProfileDue from "./ProfileDue";
-import ProfileTotDue from "./ProfileTotDue";
-import ProfileWallet from "./ProfileWallet";
-import ProfileLogout from "./ProfileLogout";
+import ProfileHeader from "../components/ProfileHeader";
+import ProfileContent from "../components/ProfileContent";
+import ProfileContent2 from "../components/ProfileContent2";
+import ProfileDue from "../components/ProfileDue";
+import ProfileTotDue from "../components/ProfileTotDue";
+import ProfileWallet from "../components/ProfileWallet";
+import ProfileLogout  from "../components/ProfileLogout";
 
 const Profile = () => {
   return (

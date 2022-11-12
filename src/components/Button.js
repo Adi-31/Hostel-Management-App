@@ -1,7 +1,7 @@
 import { COLORS, SIZES } from "../constants/theme";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Image, StyleSheet, Text, View } from "react-native";
-import Profile from "../assets/images/Profile.png";
+import PrflPic from "../assets/images/PrflPic.png";
 export const CircleButton = ({ navigation }) => {
   return (
     <TouchableOpacity
@@ -13,9 +13,9 @@ export const CircleButton = ({ navigation }) => {
       }}
     >
       <Image
-        source={Profile}
+        source={PrflPic}
         resizeMode="contain"
-        style={{ width: 42, height: 42 }}
+        style={{ width: 42, height: 42 ,borderRadius:20}}
       />
     </TouchableOpacity>
   );
