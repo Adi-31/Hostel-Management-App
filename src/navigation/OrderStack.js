@@ -1,24 +1,16 @@
-import { View, Text, Button, SafeAreaView } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { StatusBar } from "expo-status-bar";
-import Order from "../components/Order";
-import OrderDetails from "../components/OrderDetails";
-
-const OrderMainScreen = ({ navigation }) => (
-     <Order />
-);
+import { Orders, OrderDetails } from "../screens";
 
 const Stack = createStackNavigator();
 
 const OrderStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="OrderMainScreen"
+      initialRouteName="Orders"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="OrderMainScreen" component={Order} />
+      <Stack.Screen name="Orders" component={Orders} />
       <Stack.Screen name="OrderDetails" component={OrderDetails} />
-
     </Stack.Navigator>
   );
 };

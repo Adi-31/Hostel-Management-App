@@ -1,39 +1,54 @@
 import { View, Text, Button, TouchableOpacity, StyleSheet } from "react-native";
 import { SIZES } from "../constants/theme";
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Ionicons from "@expo/vector-icons/Ionicons";
 
-
-
-const OrderDetailsHeder = ({route, navigation}) => {
- // const { Itemid } = route.params;
-  console.log(route)
+const OrderDetailsHeader = ({ route, navigation }) => {
+  // const { Itemid } = route.params;
+  console.log(route);
   return (
-    <View
-      style={styles.container}
-    >
-      <View style={styles.backbutton}>
-         {<TouchableOpacity
+    <View style={styles.orderDetailscontainer}>
+      <View style={styles.orderDetailsbackbutton}>
+        {
+          <TouchableOpacity
             onPress={() => navigation.navigate("OrderMainScreen")}
-            >
+          >
             <Text>
               <Ionicons name="arrow-back-outline" size={32} color="white" />
-           </Text>
-            </TouchableOpacity> }
-
+            </Text>
+          </TouchableOpacity>
+        }
       </View>
-      <View style={styles.cartheaderview}>
-        <Text style={styles.cartheadertext}>Order Id</Text></View>
-    
-         
+      <View style={styles.orderDetailscartheaderview}>
+        <Text style={styles.orderDetailscartheadertext}>Order Id</Text>
+      </View>
     </View>
   );
 };
 
-export default OrderDetailsHeder;
+export default OrderDetailsHeader;
 
 const styles = StyleSheet.create({
-  container : { flexDirection: "row", height: 75, backgroundColor: "#3358F9" },
-  backbutton : {backgroundColor: '#3358F9', flex: 1, alignItems: 'flex-start', justifyContent: 'center', paddingLeft: 10},
-  cartheaderview : {backgroundColor: '#3358F9', flex: 8, alignItems: 'flex-start', justifyContent: 'center',},
-  cartheadertext : {fontSize: SIZES.large * 2 ,color: "white", fontWeight: "bold",}
-})
+  orderDetailscontainer: {
+    flexDirection: "row",
+    height: 75,
+    backgroundColor: "#3358F9",
+  },
+  orderDetailsbackbutton: {
+    backgroundColor: "#3358F9",
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "center",
+    paddingLeft: 10,
+  },
+  orderDetailscartheaderview: {
+    backgroundColor: "#3358F9",
+    flex: 8,
+    alignItems: "flex-start",
+    justifyContent: "center",
+  },
+  orderDetailscartheadertext: {
+    fontSize: SIZES.large * 2,
+    color: "white",
+    fontWeight: "bold",
+  },
+});
