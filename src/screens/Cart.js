@@ -4,11 +4,7 @@ import {FlatList,Text,TouchableOpacity,View,StyleSheet,ScrollView,
 import { SIZES } from "../constants/theme";
 import { CircleButton, SquareButton } from "../components/Button";
 import Ionicons from "@expo/vector-icons/Ionicons";
-<<<<<<< HEAD
-import { BreakfastIcon, LunchIcon, DinnerIcon} from "../assets/icons"
-=======
-import { BreakfastIcon } from "../assets/icons";
->>>>>>> 64960795a128185c5147f77855c098515e1d7a41
+import { BreakfastIcon ,LunchIcon,DinnerIcon} from "../assets/icons";
 
 // import SquareButton from "../components/SquareBtn";
 
@@ -21,19 +17,8 @@ const listOfCart = [
   //    id: 2,
   //    title: "Biriyani Rice",
   //  },
-<<<<<<< HEAD
   
   
-=======
-  //  {
-  //   id: 1,
-  //   foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Biriyani Rice",
-  // },
->>>>>>> 64960795a128185c5147f77855c098515e1d7a41
 ];
 
 const CartHeader = ({ navigation }) => {
@@ -57,7 +42,6 @@ const CartHeader = ({ navigation }) => {
 
 const CartContent2 = () => {
   return (
-<<<<<<< HEAD
     <View style={{flexDirection :'row',backgroundColor:'white',padding:10}}>
         <View style={{flexDirection:'row', backgroundColor :'#EFEFF0',padding : 10,marginRight:10, borderRadius:10,alignItems:'center',justifyContent:'center'}}>
         <BreakfastIcon/>
@@ -73,45 +57,12 @@ const CartContent2 = () => {
           <DinnerIcon/>
           <Text style={{fontWeight : '400', fontSize : 13}}> Dinner</Text>
           </View>
+          </View>
 
 
 
 
-=======
-    <View
-      style={{ flexDirection: "row", backgroundColor: "white", padding: 10 }}
-    >
-      <View
-        style={{
-          flexDirection: "row",
-          backgroundColor: "#EFEFF0",
-          padding: 10,
-          marginRight: 10,
-          borderRadius: 10,
-        }}
-      >
-        <BreakfastIcon />
-        <Text style={{ fontWeight: "400", fontSize: 13 }}> Breakfast</Text>
->>>>>>> 64960795a128185c5147f77855c098515e1d7a41
-      </View>
-
-      <View
-        style={{
-          backgroundColor: "#EFEFF0",
-          padding: 10,
-          marginRight: 10,
-          borderRadius: 10,
-        }}
-      >
-        <Text style={{ fontWeight: "400", fontSize: 13 }}> Lunch</Text>
-      </View>
-
-      <View
-        style={{ backgroundColor: "#EFEFF0", padding: 10, borderRadius: 10 }}
-      >
-        <Text style={{ fontWeight: "400", fontSize: 13 }}> Dinner</Text>
-      </View>
-    </View>
+    
   );
 };
 
@@ -276,20 +227,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
-<<<<<<< HEAD
   optDinnercontainer: { backgroundColor: "white", padding: 15, marginTop: 10 },
   optDinnercontainer1: { borderRadius: 10, backgroundColor: "#FEF4DB", padding:10,paddingBottom:15,borderWidth:1,borderColor:"#F5B80D"},
-=======
-  optDinnercontainer: { backgroundColor: "white", padding: 10, marginTop: 10 },
-  optDinnercontainer1: {
-    borderRadius: 10,
-    backgroundColor: "#FEF4DB",
-    padding: 10,
-    paddingBottom: 15,
-    borderWidth: 1,
-    borderColor: "#F5B80D",
-  },
->>>>>>> 64960795a128185c5147f77855c098515e1d7a41
   optDinnerbuttonview: {
     flexDirection: "row",
     alignItems: "flex-start",
