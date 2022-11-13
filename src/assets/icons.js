@@ -137,6 +137,30 @@ const GrayMinusIcon = () => (
   </Svg>
 );
 
+const BreakfastIcon = () => (
+  <Svg
+    width={12}
+    height={12}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    
+  >
+    <Path
+      d="M9.25 6a3.25 3.25 0 1 0-6.5 0M2.495 2.495 2.43 2.43m7.075.065.065-.065-.065.065ZM6 1.04V1v.04ZM1.04 6H1h.04ZM11 6h-.04.04Z"
+      stroke="#0C0F17"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <Path
+      d="M2 7.5h8M3 9h6M4.5 10.5h3"
+      stroke="#0C0F17"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
+);
+
 export {
   MenuIcon,
   OrdersIcon,
@@ -144,4 +168,5 @@ export {
   GreenButton,
   GreenAddIcon,
   GrayMinusIcon,
+  BreakfastIcon
 };

@@ -10,6 +10,7 @@ import {
 import { SIZES } from "../constants/theme";
 import { CircleButton, SquareButton } from "../components/Button";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import BreakfastIcon from "../assets/icons"
 
 // import SquareButton from "../components/SquareBtn";
 
@@ -30,50 +31,8 @@ const listOfCart = [
   //   id: 2,
   //   title: "Biriyani Rice",
   // },
-  // {
-  //   id: 1,
-  //   foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Biriyani Rice",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Biriyani Rice",
-  // },
-  // {
-  //   id: 1,
-  //   foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Biriyani Rice",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Biriyani Rice",
-  // },
-  // {
-  //   id: 1,
-  //   foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Biriyani Rice",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Biriyani Rice",
-  // },
-  // {
-  //   id: 1,
-  //   foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Biriyani Rice",
-  // },
+  
+  
 ];
 
 const CartHeader = ({ navigation }) => {
@@ -95,20 +54,21 @@ const CartHeader = ({ navigation }) => {
   );
 };
 
-const CartContent2 = () => {
+const CartContent2 = () =>{
   return (
     <View style={{flexDirection :'row',backgroundColor:'white',padding:10}}>
-        <View style={{backgroundColor :'#EFEFF0',padding : 10,marginRight:10, borderRadius:10}}>
-          <Text style={{fontWeight : '400', fontSize : 15, }}> Breakfast</Text>
+        <View style={{flexDirection:'row', backgroundColor :'#EFEFF0',padding : 10,marginRight:10, borderRadius:10}}>
+        
+          <Text style={{fontWeight : '400', fontSize : 13, }}> Breakfast</Text>
         </View>
 
         <View style={{backgroundColor : '#EFEFF0',padding : 10, marginRight:10,borderRadius:10}}>
-          <Text style={{fontWeight : '400', fontSize : 15}}> Lunch</Text>
+          <Text style={{fontWeight : '400', fontSize : 13}}> Lunch</Text>
 
         </View>
 
         <View style={{backgroundColor : '#EFEFF0',padding : 10,borderRadius:10}}>
-          <Text style={{fontWeight : '400', fontSize : 15}}> Dinner</Text>
+          <Text style={{fontWeight : '400', fontSize : 13}}> Dinner</Text>
 
         </View>
 
@@ -125,12 +85,11 @@ function OptDinner() {
       <View style={styles.optDinnercontainer1}>
         <View style={styles.optDinnerbuttonview}>
           <SquareButton />
-          <Text style={styles.optDinneropt}> Opt for Dinner</Text>
+          <Text style={styles.optDinneropt}> Opt for Dinner 🍛</Text>
         </View>
         <View style={styles.optDinnerfoodview}>
           <Text style={styles.optDinnerfoodtext}>
-            The food marked as dinner in your current cart will be marked as
-            your prefference for dinner too..{" "}
+          The Food marked as Dinner in your Current Cart will be marked as your preference for dinner too{" "}
           </Text>
         </View>
       </View>
@@ -282,7 +241,7 @@ const styles = StyleSheet.create({
   },
 
   optDinnercontainer: { backgroundColor: "white", padding: 10, marginTop: 10 },
-  optDinnercontainer1: { borderRadius: 10, backgroundColor: "#FEF4DB", padding:10,paddingBottom:10,borderWidth:1,borderColor:"#F5B80D"},
+  optDinnercontainer1: { borderRadius: 10, backgroundColor: "#FEF4DB", padding:10,paddingBottom:15,borderWidth:1,borderColor:"#F5B80D"},
   optDinnerbuttonview: {
     flexDirection: "row",
     alignItems: "flex-start",
