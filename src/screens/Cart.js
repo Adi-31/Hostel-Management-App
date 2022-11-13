@@ -10,6 +10,7 @@ import {
 import { SIZES } from "../constants/theme";
 import { CircleButton, SquareButton } from "../components/Button";
 import Ionicons from "@expo/vector-icons/Ionicons";
+
 // import SquareButton from "../components/SquareBtn";
 
 const listOfCart = [
@@ -93,6 +94,31 @@ const CartHeader = ({ navigation }) => {
     </View>
   );
 };
+
+const CartContent2 = () => {
+  return (
+    <View style={{flexDirection :'row',backgroundColor:'white',padding:10}}>
+        <View style={{backgroundColor :'#EFEFF0',padding : 10,marginRight:10, borderRadius:10}}>
+          <Text style={{fontWeight : '400', fontSize : 15, }}> Breakfast</Text>
+        </View>
+
+        <View style={{backgroundColor : '#EFEFF0',padding : 10, marginRight:10,borderRadius:10}}>
+          <Text style={{fontWeight : '400', fontSize : 15}}> Lunch</Text>
+
+        </View>
+
+        <View style={{backgroundColor : '#EFEFF0',padding : 10,borderRadius:10}}>
+          <Text style={{fontWeight : '400', fontSize : 15}}> Dinner</Text>
+
+        </View>
+
+
+
+
+      </View>
+  )
+}
+
 function OptDinner() {
   return (
     <View style={styles.optDinnercontainer}>
@@ -185,6 +211,10 @@ const Cart = ({ navigation }) => {
           /> */}
           <CartContent />
         </View>
+          <View style ={{flex:2}}>
+          <CartContent2/>
+          </View>
+
         <View
           style={{
             flex: 2,
@@ -192,6 +222,7 @@ const Cart = ({ navigation }) => {
             justifyContent: "flex-end",
           }}
         >
+         
           <OptDinner />
         </View>
       </ScrollView>
@@ -251,15 +282,15 @@ const styles = StyleSheet.create({
   },
 
   optDinnercontainer: { backgroundColor: "white", padding: 10, marginTop: 10 },
-  optDinnercontainer1: { borderRadius: 10, backgroundColor: "#F5B80D" },
+  optDinnercontainer1: { borderRadius: 10, backgroundColor: "#FEF4DB", padding:10,paddingBottom:10,borderWidth:1,borderColor:"#F5B80D"},
   optDinnerbuttonview: {
     flexDirection: "row",
     alignItems: "flex-start",
-    justifyContent: "flex-start",
+    justifyContent: "flex-start"
   },
-  optDinneropt: { fontSize: 25, fontWeight: "bold" },
+  optDinneropt: { fontSize: 20, fontWeight: "bold" ,color:"#F5B80D"},
   optDinnerfoodview: { alignItems: "center", justifyContent: "center" },
-  optDinnerfoodtext: { fontSize: 10, marginLeft: 35 },
+  optDinnerfoodtext: { fontSize: 10,marginLeft:30 },
 
   confirmcontainer: {
     flexDirection: "row",
