@@ -173,7 +173,7 @@ const Cart = ({ navigation }) => {
         </View>
       </ScrollView>
       <View
-        style={{ flex: 3, alignItems: "flex-end", justifyContent: "flex-end" }}
+        style={{ flex: 3, alignItems: "center", justifyContent: "center" }}
       >
         <Confirm />
       </View>
