@@ -1,5 +1,5 @@
 import { View, StyleSheet } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { Header, ScrollableMenu, ViewCart } from "../components";
 
 const Menu = ({ navigation }) => {

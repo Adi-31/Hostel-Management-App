@@ -2,6 +2,7 @@ import { COLORS, SIZES } from "../constants/theme";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Image, StyleSheet, Text, View } from "react-native";
 import PrflPic from "../assets/images/PrflPic.png";
+import { useState } from "react";
 export const CircleButton = ({ navigation }) => {
   return (
     <TouchableOpacity
@@ -20,11 +21,11 @@ export const CircleButton = ({ navigation }) => {
     </TouchableOpacity>
   );
 };
-export const SquareButton = () => {
+export const SquareButton = ({ handleOptDinner, optDinner }) => {
   return (
     <TouchableOpacity
       style={styles.conatainer2}
-      onPress={() => {}}
+      onPress={handleOptDinner}
     ></TouchableOpacity>
   );
 };
