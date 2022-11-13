@@ -1,9 +1,9 @@
 import { View, TouchableOpacity, Platform } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import MenuStack from "./MenuStack";
-import OrderStack from "./OrderStack";
-import ProfileStack from "./ProfileStack";
+import MenuStackScreen from "./MenuStackScreen";
+import OrderStackScreen from "./OrderStackScreen";
+import ProfileStackScreen from "./ProfileStackScreen";
 import { MenuIcon, OrdersIcon, ProfileIcon } from "../assets/icons";
 
 function MyTabBar({ state, descriptors, navigation }) {
@@ -27,7 +27,7 @@ function MyTabBar({ state, descriptors, navigation }) {
         let icon = "";
         if (route.name == "MenuStack") {
           icon = <MenuIcon />;
-        } else if (route.name == "Orders") {
+        } else if (route.name == "OrdersStack") {
           icon = <OrdersIcon />;
         } else {
           icon = <ProfileIcon />;
@@ -84,9 +84,9 @@ export default function App() {
       screenOptions={{ headerShown: false }}
       tabBar={(props) => <MyTabBar {...props} />}
     >
-      <Tab.Screen name="MenuStack" component={MenuStack} />
-      <Tab.Screen name="Orders" component={OrderStack} />
-      <Tab.Screen name="Profile" component={ProfileStack} />
+      <Tab.Screen name="MenuStack" component={MenuStackScreen} />
+      <Tab.Screen name="OrdersStack" component={OrderStackScreen} />
+      <Tab.Screen name="ProfileStack" component={ProfileStackScreen} />
     </Tab.Navigator>
   );
 }

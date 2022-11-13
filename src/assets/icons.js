@@ -1,4 +1,4 @@
-import Svg, { Path } from "react-native-svg";
+import Svg, { SvgProps, Rect, Path } from "react-native-svg";
 
 const MenuIcon = () => (
   <Svg width={27} height={35} viewBox="0 0 27 35">
@@ -94,4 +94,25 @@ const ProfileIcon = () => (
     />
   </Svg>
 );
-export { MenuIcon, OrdersIcon, ProfileIcon };
+
+const GreenButton = () => (
+  <Svg width={38} height={39} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <Rect
+      y={0.5}
+      width={38}
+      height={38}
+      rx={10}
+      fill="#32BA7C"
+      fillOpacity={0.15}
+    />
+    <Path
+      d="M14.5 19.5h9M19 24v-9"
+      stroke="#32BA7C"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
+);
+
+export { MenuIcon, OrdersIcon, ProfileIcon, GreenButton };

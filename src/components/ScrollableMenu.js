@@ -6,12 +6,13 @@ import {
   StatusBar,
   TextInput,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import { COLORS } from "../constants/theme";
 import porotta from "../assets/images/porotta.png";
 import chappathi from "../assets/images/chappathi.png";
 import dosa from "../assets/images/dosa.png";
-import PlusIcon from "../assets/images/PlusIcon.png";
+import { GreenButton } from "../assets/icons";
 
 const DATA = [
   {
@@ -169,7 +170,14 @@ const MenuItem = ({ item }) => (
         justifyContent: "center",
       }}
     >
-      <Image source={PlusIcon} />
+      <TouchableOpacity
+        onPress={() => {
+          console.log("Button pressed");
+        }}
+      >
+        <GreenButton />
+      </TouchableOpacity>
+      {/* <Image source={PlusIcon} /> */}
     </View>
   </View>
 );

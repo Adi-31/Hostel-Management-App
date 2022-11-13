@@ -9,7 +9,7 @@ const App = () => {
       style={{
         flex: 1,
         backgroundColor: COLORS.blue,
-        paddingTop: Platform.OS === "android" ? 30 : 35,
+        paddingTop: Platform.OS === "android" ? 0 : 35,
       }}
     >
       <Routes />

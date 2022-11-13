@@ -6,7 +6,7 @@ import { CircleButton } from "./Button";
 const Header = ({ navigation }) => {
   const [timeOfDay, setTimeOfDay] = useState(0);
 
-  let greeting = "Morning";
+  let greeting = "";
   useEffect(() => {
     var hours = new Date().getHours(); //Current Hours
     setTimeOfDay(hours);
@@ -14,10 +14,8 @@ const Header = ({ navigation }) => {
   if (timeOfDay < 12) greeting = "Morning";
   else if (timeOfDay > 12) greeting = "Afternoon";
   else if (timeOfDay > 18) greeting = "Evening";
-  console.log(greeting);
 
   const [user, setUser] = useState("Anna");
-  // console.log(navigation);
   return (
     <View style={styles.container}>
       {/* left side text  */}
