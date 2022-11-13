@@ -200,7 +200,7 @@ const Cart = ({ navigation }) => {
         <View
           style={{
             flex: 2,
-            alignItems: "flex-end",
+            // alignItems: "flex-end",
             justifyContent: "flex-end",
           }}
         >
