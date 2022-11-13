@@ -93,12 +93,13 @@ const Orders = ({ navigation }) => {
   let { navigate } = navigation;
   return (
     <View>
-      <Header />
+      <Header navigation={navigation} />
       <FlatList
         data={OrderMenu}
         keyExtractor={(item) => item.id}
         renderItem={(item) => <OrderCard navigate={navigate} item={item} />}
         style={styles.flatList}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

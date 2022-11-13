@@ -4,5 +4,6 @@ import ScrollableMenu from "./ScrollableMenu";
 import CartContent from "./CartContent";
 
 import ViewCart from "./ViewCart";
+import ItemCounter from "./ItemCounter";
 
-export { Button, Header, ScrollableMenu, ViewCart, CartContent };
+export { Button, Header, ScrollableMenu, ViewCart, CartContent, ItemCounter };

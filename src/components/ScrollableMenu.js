@@ -12,7 +12,9 @@ import { COLORS } from "../constants/theme";
 import porotta from "../assets/images/porotta.png";
 import chappathi from "../assets/images/chappathi.png";
 import dosa from "../assets/images/dosa.png";
-import { GreenButton } from "../assets/icons";
+import { GreenButton, GreenAddIcon, GrayMinusIcon } from "../assets/icons";
+import ItemCounter from "./ItemCounter";
+import { useState } from "react";
 
 const DATA = [
   {
@@ -114,73 +116,91 @@ const DATA = [
   },
 ];
 
-const MenuItem = ({ item }) => (
-  <View
-    style={{
-      marginVertical: 4,
-      // backgroundColor: "#f9c2ff",
-      paddingHorizontal: 10,
-      // paddingVertical: 6,
-      flexDirection: "row",
-    }}
-  >
-    {/* left item  */}
+const MenuItem = ({ item }) => {
+  const [items, setItems] = useState(2);
+  const [count, setCount] = useState(0);
+  const handleAddItems = () => {
+    setCount((count) => count + 1);
+  };
+  const handleRemoveItems = () => {
+    setCount((count) => count - 1);
+  };
+
+  return (
     <View
       style={{
-        padding: 10,
+        marginVertical: 4,
+        paddingLeft: 10,
+        flexDirection: "row",
+        flexWrap: "wrap",
       }}
     >
-      <Image
-        source={item.img}
-        resizeMode="contain"
-        style={{ borderRadius: 10 }}
-      />
-    </View>
-    {/* center item  */}
-    <View
-      style={{
-        flex: 2,
-        // backgroundColor: "cyan",
-        flexDirection: "column",
-        paddingVertical: 10,
-      }}
-    >
-      <Text style={{ fontSize: 14, fontWeight: "700" }}>{item.foodItem}</Text>
-
-      <Text style={{ fontSize: 10, fontWeight: "400", marginBottom: 4 }}>
-        {item.details}
-      </Text>
-
-      <Text
+      {/* left item  */}
+      <View
         style={{
-          fontSize: 24,
-          fontWeight: "700",
-          color: COLORS.green,
+          padding: 10,
+          justifyContent: "center",
+          // backgroundColor: COLORS.yellow,
+          flexWrap: "wrap",
         }}
       >
-        ₹{item.cost}
-      </Text>
-    </View>
-    {/* right item  */}
-    <View
-      style={{
-        flex: 1,
-        // backgroundColor: "pink",
-        alignItems: "flex-end",
-        justifyContent: "center",
-      }}
-    >
-      <TouchableOpacity
-        onPress={() => {
-          console.log("Button pressed");
+        <Image
+          source={item.img}
+          resizeMode="contain"
+          style={{ borderRadius: 10 }}
+        />
+      </View>
+      {/* center item  */}
+      <View
+        style={{
+          flex: 2,
+          // backgroundColor: "cyan",
+          flexDirection: "column",
+          paddingVertical: 10,
+          paddingHorizontal: 10,
+          flexWrap: "wrap",
         }}
       >
-        <GreenButton />
-      </TouchableOpacity>
-      {/* <Image source={PlusIcon} /> */}
+        <Text style={{ fontSize: 16, fontWeight: "700" }}>{item.foodItem}</Text>
+
+        <Text style={{ fontSize: 12, fontWeight: "400", marginBottom: 4 }}>
+          {item.details}
+        </Text>
+
+        <Text
+          style={{
+            fontSize: 24,
+            fontWeight: "700",
+            color: COLORS.green,
+          }}
+        >
+          ₹{item.cost}
+        </Text>
+      </View>
+      {/* right item  */}
+      <View
+        style={{
+          flex: 1,
+          // backgroundColor: "pink",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {count === 0 ? (
+          <TouchableOpacity onPress={handleAddItems}>
+            <GreenButton />
+          </TouchableOpacity>
+        ) : (
+          <ItemCounter
+            count={count}
+            handleAddItems={handleAddItems}
+            handleRemoveItems={handleRemoveItems}
+          />
+        )}
+      </View>
     </View>
-  </View>
-);
+  );
+};
 const SearchBar = () => {
   return (
     <View style={styles.conatiner}>
@@ -194,23 +214,15 @@ const SearchBar = () => {
 };
 
 const SectionListHeader = () => (
-  <View style={{ backgroundColor: "white" }}>
+  <View style={{ backgroundColor: COLORS.white }}>
     <SearchBar />
-    <Text
-      style={{
-        fontSize: 30,
-        fontWeight: "700",
-        marginBottom: 10,
-      }}
-    >
-      Order Your Food 🍛
-    </Text>
+    <Text style={styles.listTitle}>Order Your Food 🍛</Text>
   </View>
 );
 const MenuCardTitle = ({ section: { title } }) => (
-  <View style={{ flexDirection: "row", backgroundColor: "white" }}>
+  <View style={styles.menuCardTitleContainer}>
     <View style={{ flex: 3, paddingLeft: 8 }}>
-      <Text style={{ fontSize: 20, fontWeight: "700" }}>{title}</Text>
+      <Text style={styles.menuCardText}>{title}</Text>
     </View>
   </View>
 );
@@ -232,6 +244,19 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: StatusBar.currentHeight,
     marginHorizontal: 16,
+  },
+  listTitle: {
+    fontSize: 30,
+    fontWeight: "700",
+    marginBottom: 10,
+  },
+  menuCardTitleContainer: {
+    flexDirection: "row",
+    backgroundColor: COLORS.white,
+  },
+  menuCardText: {
+    fontSize: 20,
+    fontWeight: "700",
   },
   item: {
     backgroundColor: "#f9c2ff",

@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
-const ViewCart = ({ navigation }) => {
+const ViewCart = ({ navigation, count }) => {
+  const [numberOfItems, setNumberOfItems] = useState(0);
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.touch}>
-        <Text style={styles.textcolor}>4 items in Cart</Text>
+        <Text style={styles.textcolor}>{numberOfItems} items in Cart</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.touch1}

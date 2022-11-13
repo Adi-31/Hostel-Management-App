@@ -7,7 +7,7 @@ export const CircleButton = ({ navigation }) => {
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
-        navigation.navigate("Profile", {
+        navigation.navigate("ProfileStack", {
           screen: "Profile",
         });
       }}

@@ -114,5 +114,34 @@ const GreenButton = () => (
     />
   </Svg>
 );
+const GreenAddIcon = () => (
+  <Svg width={14} height={14} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <Path
+      d="M3.5 7h7M7 10.5v-7"
+      stroke="#32BA7C"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
+);
+const GrayMinusIcon = () => (
+  <Svg width={14} height={14} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <Path
+      d="M3.5 7h7"
+      stroke="#0C0F17"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
+);
 
-export { MenuIcon, OrdersIcon, ProfileIcon, GreenButton };
+export {
+  MenuIcon,
+  OrdersIcon,
+  ProfileIcon,
+  GreenButton,
+  GreenAddIcon,
+  GrayMinusIcon,
+};
