@@ -1,16 +1,10 @@
 import { useState } from "react";
-import {
-  FlatList,
-  Text,
-  TouchableOpacity,
-  View,
-  StyleSheet,
-  ScrollView,
+import {FlatList,Text,TouchableOpacity,View,StyleSheet,ScrollView,
 } from "react-native";
 import { SIZES } from "../constants/theme";
 import { CircleButton, SquareButton } from "../components/Button";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import BreakfastIcon from "../assets/icons"
+import { BreakfastIcon, LunchIcon, DinnerIcon} from "../assets/icons"
 
 // import SquareButton from "../components/SquareBtn";
 
@@ -23,14 +17,6 @@ const listOfCart = [
   //    id: 2,
   //    title: "Biriyani Rice",
   //  },
-  //  {
-  //   id: 1,
-  //   foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
-  // },
-  // {
-  //   id: 2,
-  //   title: "Biriyani Rice",
-  // },
   
   
 ];
@@ -57,20 +43,20 @@ const CartHeader = ({ navigation }) => {
 const CartContent2 = () =>{
   return (
     <View style={{flexDirection :'row',backgroundColor:'white',padding:10}}>
-        <View style={{flexDirection:'row', backgroundColor :'#EFEFF0',padding : 10,marginRight:10, borderRadius:10}}>
-        
+        <View style={{flexDirection:'row', backgroundColor :'#EFEFF0',padding : 10,marginRight:10, borderRadius:10,alignItems:'center',justifyContent:'center'}}>
+        <BreakfastIcon/>
           <Text style={{fontWeight : '400', fontSize : 13, }}> Breakfast</Text>
         </View>
 
-        <View style={{backgroundColor : '#EFEFF0',padding : 10, marginRight:10,borderRadius:10}}>
+        <View style={{flexDirection:'row',backgroundColor : '#EFEFF0',padding : 10, marginRight:10,borderRadius:10,alignItems:'center',justifyContent:'center'}}>
+          <LunchIcon/>
           <Text style={{fontWeight : '400', fontSize : 13}}> Lunch</Text>
-
         </View>
 
-        <View style={{backgroundColor : '#EFEFF0',padding : 10,borderRadius:10}}>
+        <View style={{flexDirection:'row',backgroundColor : '#EFEFF0',padding : 10,borderRadius:10,alignItems:'center',justifyContent:'center'}}>
+          <DinnerIcon/>
           <Text style={{fontWeight : '400', fontSize : 13}}> Dinner</Text>
-
-        </View>
+          </View>
 
 
 
@@ -101,24 +87,24 @@ const Confirm = () => {
     <View>
       <View style={styles.confirmcontainer}>
         <View style={styles.confirmsubview1}>
-          <Text> 2 Items </Text>
+          <Text style={{color:"#32BA7C"}}> 2 Items </Text>
         </View>
 
         <View style={styles.confirmsubview2}>
-          <Text> Rs 120</Text>
+          <Text style={{color:"#32BA7C"}}> Rs 120</Text>
         </View>
       </View>
 
       <View style={styles.confirmCaution}>
         <Text style={styles.confirmCautiontext}>
-          {" "}
+          
           Once you confirm your order, your order will be sent to canteen and
-          food will be prepared soon{" "}
+          food will be prepared soon
         </Text>
       </View>
 
       <View style={styles.confirmbutton}>
-        <Text style={{ color: "white" }}> Confirm Order</Text>
+        <Text style={{ color: "white" }}>CONFIRM ORDER</Text>
       </View>
     </View>
   );
@@ -196,8 +182,8 @@ const Cart = ({ navigation }) => {
 export default Cart;
 
 const styles = StyleSheet.create({
-  container: { flexDirection: "row", marginVertical: 10 },
-  container1: { flex: 3, backgroundColor: "white", padding: 8, marginLeft: 10 },
+  container: { flexDirection: "row", marginVertical:10},
+  container1: { flex: 3, backgroundColor: "white", padding: 8 },
   container2: { fontWeight: "700", fontSize: 15 },
   container2text: { fontWeight: "400", fontSize: 10 },
   buttonview: {
@@ -240,7 +226,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
-  optDinnercontainer: { backgroundColor: "white", padding: 10, marginTop: 10 },
+  optDinnercontainer: { backgroundColor: "white", padding: 15, marginTop: 10 },
   optDinnercontainer1: { borderRadius: 10, backgroundColor: "#FEF4DB", padding:10,paddingBottom:15,borderWidth:1,borderColor:"#F5B80D"},
   optDinnerbuttonview: {
     flexDirection: "row",
@@ -260,25 +246,30 @@ const styles = StyleSheet.create({
   confirmsubview2: {
     flex: 1,
     alignItems: "flex-end",
-    justifyContent: "flex-end",
+    justifyContent: "flex-end"
+    
   },
   confirmCaution: {
     backgroundColor: "#D7F4E7",
     padding: 10,
     marginTop: 10,
-    borderRadius: 50,
+    borderRadius: 10,
+    borderWidth:1,
+    borderColor:"#32BA7C"
+    
   },
   confirmCautiontext: {
     fontSize: 12,
     alignItems: "center",
     justifyContent: "center",
+    color:"#32BA7C"
   },
   confirmbutton: {
     backgroundColor: "#32BA7C",
     padding: 10,
     marginTop: 10,
-    borderRadius: 50,
+    borderRadius: 10,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center",marginLeft:10,marginRight:10
   },
 });
