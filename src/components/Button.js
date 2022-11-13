@@ -15,7 +15,7 @@ export const CircleButton = ({ navigation }) => {
       <Image
         source={PrflPic}
         resizeMode="contain"
-        style={{ width: 42, height: 42, borderRadius: "50%" }}
+        style={{ width: 42, height: 42, borderRadius: 50 }}
       />
     </TouchableOpacity>
   );
