@@ -12,7 +12,7 @@ const CartContent = () => {
           2 porotta 2 chicken curry + tea
         </Text>
       </View>
-      <View style={styles.buttonview}>
+      {/* <View style={styles.buttonview}>
         <TouchableOpacity style={styles.touch} onPress={decrement}>
           <Text style={styles.size}> -</Text>
         </TouchableOpacity>
@@ -23,7 +23,7 @@ const CartContent = () => {
         <TouchableOpacity style={styles.touch} onPress={increment}>
           <Text style={styles.size}>+</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
 
       <View style={styles.rupee}>
         <Text>Rs 60</Text>
