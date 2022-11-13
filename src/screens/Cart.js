@@ -4,7 +4,11 @@ import {FlatList,Text,TouchableOpacity,View,StyleSheet,ScrollView,
 import { SIZES } from "../constants/theme";
 import { CircleButton, SquareButton } from "../components/Button";
 import Ionicons from "@expo/vector-icons/Ionicons";
+<<<<<<< HEAD
 import { BreakfastIcon, LunchIcon, DinnerIcon} from "../assets/icons"
+=======
+import { BreakfastIcon } from "../assets/icons";
+>>>>>>> 64960795a128185c5147f77855c098515e1d7a41
 
 // import SquareButton from "../components/SquareBtn";
 
@@ -17,8 +21,19 @@ const listOfCart = [
   //    id: 2,
   //    title: "Biriyani Rice",
   //  },
+<<<<<<< HEAD
   
   
+=======
+  //  {
+  //   id: 1,
+  //   foodItem: "Porotta & Chicken Curry Porotta & Chicken Curry",
+  // },
+  // {
+  //   id: 2,
+  //   title: "Biriyani Rice",
+  // },
+>>>>>>> 64960795a128185c5147f77855c098515e1d7a41
 ];
 
 const CartHeader = ({ navigation }) => {
@@ -40,8 +55,9 @@ const CartHeader = ({ navigation }) => {
   );
 };
 
-const CartContent2 = () =>{
+const CartContent2 = () => {
   return (
+<<<<<<< HEAD
     <View style={{flexDirection :'row',backgroundColor:'white',padding:10}}>
         <View style={{flexDirection:'row', backgroundColor :'#EFEFF0',padding : 10,marginRight:10, borderRadius:10,alignItems:'center',justifyContent:'center'}}>
         <BreakfastIcon/>
@@ -61,9 +77,43 @@ const CartContent2 = () =>{
 
 
 
+=======
+    <View
+      style={{ flexDirection: "row", backgroundColor: "white", padding: 10 }}
+    >
+      <View
+        style={{
+          flexDirection: "row",
+          backgroundColor: "#EFEFF0",
+          padding: 10,
+          marginRight: 10,
+          borderRadius: 10,
+        }}
+      >
+        <BreakfastIcon />
+        <Text style={{ fontWeight: "400", fontSize: 13 }}> Breakfast</Text>
+>>>>>>> 64960795a128185c5147f77855c098515e1d7a41
       </View>
-  )
-}
+
+      <View
+        style={{
+          backgroundColor: "#EFEFF0",
+          padding: 10,
+          marginRight: 10,
+          borderRadius: 10,
+        }}
+      >
+        <Text style={{ fontWeight: "400", fontSize: 13 }}> Lunch</Text>
+      </View>
+
+      <View
+        style={{ backgroundColor: "#EFEFF0", padding: 10, borderRadius: 10 }}
+      >
+        <Text style={{ fontWeight: "400", fontSize: 13 }}> Dinner</Text>
+      </View>
+    </View>
+  );
+};
 
 function OptDinner() {
   return (
@@ -75,7 +125,8 @@ function OptDinner() {
         </View>
         <View style={styles.optDinnerfoodview}>
           <Text style={styles.optDinnerfoodtext}>
-          The Food marked as Dinner in your Current Cart will be marked as your preference for dinner too{" "}
+            The Food marked as Dinner in your Current Cart will be marked as
+            your preference for dinner too{" "}
           </Text>
         </View>
       </View>
@@ -156,9 +207,9 @@ const Cart = ({ navigation }) => {
           /> */}
           <CartContent />
         </View>
-          <View style ={{flex:2}}>
-          <CartContent2/>
-          </View>
+        <View style={{ flex: 2 }}>
+          <CartContent2 />
+        </View>
 
         <View
           style={{
@@ -167,7 +218,6 @@ const Cart = ({ navigation }) => {
             justifyContent: "flex-end",
           }}
         >
-         
           <OptDinner />
         </View>
       </ScrollView>
@@ -226,16 +276,28 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
+<<<<<<< HEAD
   optDinnercontainer: { backgroundColor: "white", padding: 15, marginTop: 10 },
   optDinnercontainer1: { borderRadius: 10, backgroundColor: "#FEF4DB", padding:10,paddingBottom:15,borderWidth:1,borderColor:"#F5B80D"},
+=======
+  optDinnercontainer: { backgroundColor: "white", padding: 10, marginTop: 10 },
+  optDinnercontainer1: {
+    borderRadius: 10,
+    backgroundColor: "#FEF4DB",
+    padding: 10,
+    paddingBottom: 15,
+    borderWidth: 1,
+    borderColor: "#F5B80D",
+  },
+>>>>>>> 64960795a128185c5147f77855c098515e1d7a41
   optDinnerbuttonview: {
     flexDirection: "row",
     alignItems: "flex-start",
-    justifyContent: "flex-start"
+    justifyContent: "flex-start",
   },
-  optDinneropt: { fontSize: 20, fontWeight: "bold" ,color:"#F5B80D"},
+  optDinneropt: { fontSize: 20, fontWeight: "bold", color: "#F5B80D" },
   optDinnerfoodview: { alignItems: "center", justifyContent: "center" },
-  optDinnerfoodtext: { fontSize: 10,marginLeft:30 },
+  optDinnerfoodtext: { fontSize: 10, marginLeft: 30 },
 
   confirmcontainer: {
     flexDirection: "row",
