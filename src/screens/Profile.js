@@ -5,7 +5,7 @@ import ProfileContent2 from "../components/ProfileContent2";
 import ProfileDue from "../components/ProfileDue";
 import ProfileTotDue from "../components/ProfileTotDue";
 import ProfileWallet from "../components/ProfileWallet";
-import ProfileLogout  from "../components/ProfileLogout";
+import ProfileLogout from "../components/ProfileLogout";
 
 const Profile = () => {
   return (
@@ -15,7 +15,7 @@ const Profile = () => {
       <ProfileContent2 />
       <ProfileDue />
       <ProfileTotDue />
-      <ProfileWallet />
+      {/* <ProfileWallet /> */}
       <ProfileLogout />
     </View>
   );

@@ -12,7 +12,7 @@ function MyTabBar({ state, descriptors, navigation }) {
       style={{
         flexDirection: "row",
         backgroundColor: "white",
-        height: 90,
+        height: 75,
         paddingBottom: Platform.OS === "ios" ? 25 : 0,
       }}
     >

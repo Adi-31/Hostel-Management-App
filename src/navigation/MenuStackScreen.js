@@ -6,22 +6,7 @@ import { Menu, Cart } from "../screens";
 const MenuStack = createStackNavigator();
 
 const MenuStackScreen = () => {
-  MenuStack.navigationOptions = ({ navigation }) => {
-    let tabBarVisible;
-    if (navigation.state.routes.length > 1) {
-      navigation.state.routes.map((route) => {
-        if (route.routeName === "Home") {
-          tabBarVisible = false;
-        } else {
-          tabBarVisible = true;
-        }
-      });
-    }
-
-    return {
-      tabBarVisible,
-    };
-  };
+  
   return (
     <MenuStack.Navigator
       initialRouteName="Home"
