@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { SIZES } from "../constants/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
-// import OrderDetailsHeder from "./OrderDetailsHeder";
-// import OrderDetailsContent from "./OrderDetailsContent";
+import MyStatusBar from "../components/MyStatusBar";
+import { COLORS } from "../constants/theme";
 
 const OrderDetailsHeader = ({ route, navigation }) => {
   // const { Itemid } = route.params;
@@ -123,13 +123,17 @@ const OrderDetailsContent = () => {
 };
 const OrderDetails = ({ navigation }) => {
   return (
-    <View>
-      <OrderDetailsHeader navigation={navigation} />
-      <View style={styles.container}>
-        <Text style={styles.containerText}>BILL DETAILS</Text>
-        <OrderDetailsContent />
+    <>
+      <MyStatusBar backgroundColor={COLORS.blue} barStyle="light-content" />
+
+      <View>
+        <OrderDetailsHeader navigation={navigation} />
+        <View style={styles.container}>
+          <Text style={styles.containerText}>BILL DETAILS</Text>
+          <OrderDetailsContent />
+        </View>
       </View>
-    </View>
+    </>
   );
 };
 

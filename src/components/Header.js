@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { SIZES } from "../constants/theme";
+import { SIZES, COLORS } from "../constants/theme";
 import { CircleButton } from "./Button";
 
 const Header = ({ navigation }) => {
@@ -34,17 +34,21 @@ const Header = ({ navigation }) => {
 export default Header;
 
 const styles = StyleSheet.create({
-  container: { flexDirection: "row", height: 75, backgroundColor: "#3358F9" },
-  leftsideview: { flex: 1, marginLeft: 10, padding: 10 },
-  leftsidetext1: { fontSize: SIZES.medium, color: "white", opacity: 0.5 },
+  container: { flexDirection: "row", backgroundColor: COLORS.blue },
+  leftsideview: {
+    flex: 1,
+    paddingVertical: 12,
+    paddingLeft: 16,
+  },
+  leftsidetext1: { fontSize: 14, color: "white", opacity: 0.5 },
   leftsidetext2: {
-    fontSize: SIZES.large * 2,
+    fontSize: 28,
     color: "white",
     fontWeight: "bold",
   },
   profileiconview: {
     flex: 1,
-    alignItems: "space-between",
+    alignItems: "flex-end",
     justifyContent: "center",
     marginRight: 10,
   },

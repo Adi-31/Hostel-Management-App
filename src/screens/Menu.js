@@ -1,14 +1,19 @@
 import { View, StyleSheet } from "react-native";
 import React, { useEffect } from "react";
 import { Header, ScrollableMenu, ViewCart } from "../components";
+import MyStatusBar from "../components/MyStatusBar";
+import { COLORS } from "../constants/theme";
 
 const Menu = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Header navigation={navigation} />
-      <ScrollableMenu />
-      <ViewCart navigation={navigation} />
-    </View>
+    <>
+      <MyStatusBar backgroundColor={COLORS.blue} barStyle="light-content" />
+      <View style={styles.container}>
+        <Header navigation={navigation} />
+        <ScrollableMenu />
+        <ViewCart navigation={navigation} />
+      </View>
+    </>
   );
 };
 

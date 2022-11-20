@@ -7,6 +7,7 @@ import {
   FlatList,
   SectionList,
   Button,
+  SafeAreaView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -14,6 +15,8 @@ import { SIZES } from "../constants/theme";
 import { ItemCounter } from "../components";
 import { BreakfastIcon, LunchIcon, DinnerIcon } from "../assets/icons";
 import { SquareButton } from "../components/Button";
+import MyStatusBar from "../components/MyStatusBar";
+import { COLORS } from "../constants/theme";
 
 const listOfCart = [
   {
@@ -68,7 +71,7 @@ const CartHeader = ({ navigation }) => {
   return (
     <View style={styles.cartHeadercontainer}>
       <View style={styles.cartHeaderbackbutton}>
-        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text>
             <Ionicons name="arrow-back-outline" size={32} color="white" />
           </Text>
@@ -146,101 +149,26 @@ const CartContent = ({ item }) => {
     </View>
   );
 };
-const Confirm = () => {
+const GenerateTokenButton = ({ navigation }) => {
   return (
-    <>
-      <View style={styles.confirmcontainer}>
-        <View style={styles.confirmsubview1}>
-          <Text style={{ color: "#32BA7C" }}> 2 Items </Text>
-        </View>
-
-        <View style={styles.confirmsubview2}>
-          <Text style={{ color: "#32BA7C", fontWeight: "700", fontSize: 18 }}>
-            {" "}
-            Rs 120
-          </Text>
-        </View>
-      </View>
-
-      <View style={styles.confirmCaution}>
-        <Text style={styles.confirmCautiontext}>
-          Once you confirm your order, your order will be sent to canteen and
-          food will be prepared soon
-        </Text>
-      </View>
-
-      <View style={styles.confirmbutton}>
-        <Text style={{ color: "white", fontSize: 18 }}>CONFIRM ORDER</Text>
-      </View>
-    </>
+    <TouchableOpacity
+      style={styles.confirmbutton}
+      onPress={() => navigation.navigate("Token")}
+    >
+      <Text style={{ color: "white", fontSize: 18, fontWeight: "700" }}>
+        Generate Token - $130
+      </Text>
+    </TouchableOpacity>
   );
 };
-const CartContent2 = () => {
-  return (
-    <>
-      <View
-        style={{
-          flexDirection: "row",
-          backgroundColor: "white",
-          padding: 10,
-          //   marginVertical: 5,
-        }}
-      >
-        <TouchableOpacity
-          style={{
-            flexDirection: "row",
-            backgroundColor: "#EFEFF0",
-            padding: 10,
-            marginRight: 12,
-            borderRadius: 10,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <BreakfastIcon />
-          <Text style={{ fontWeight: "400", fontSize: 13 }}> Breakfast</Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity
-          style={{
-            flexDirection: "row",
-            backgroundColor: "#EFEFF0",
-            padding: 10,
-            marginRight: 12,
-            borderRadius: 10,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <LunchIcon />
-          <Text style={{ fontWeight: "400", fontSize: 13 }}> Lunch</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={{
-            flexDirection: "row",
-            backgroundColor: "#EFEFF0",
-            padding: 10,
-            borderRadius: 10,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <DinnerIcon />
-          <Text style={{ fontWeight: "400", fontSize: 13 }}> Dinner</Text>
-        </TouchableOpacity>
-      </View>
-      <OptDinner />
-    </>
-  );
-};
 const OrderList = () => (
   <View style={{ backgroundColor: "white", flex: 1 }}>
     <SectionList
       sections={listOfCart}
       keyExtractor={(item) => item.id}
       renderItem={CartContent}
-      ListFooterComponent={CartContent2}
+      // ListFooterComponent={CartContent2}
       showsVerticalScrollIndicator={false}
     />
   </View>
@@ -248,14 +176,18 @@ const OrderList = () => (
 const Cart = ({ navigation, route }) => {
   console.log(navigation.isFocused);
   return (
-    <View style={{ flex: 1, backgroundColor: "white" }}>
-      <CartHeader navigation={navigation} />
-      {/* <View style={{ backgroundColor: "red", flex: 1 }}>
+    <>
+      <MyStatusBar backgroundColor={COLORS.blue} barStyle="light-content" />
+
+      <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
+        <CartHeader navigation={navigation} />
+        {/* <View style={{ backgroundColor: "red", flex: 1 }}>
         <OptDinner />
     </View> */}
-      <OrderList />
-      <Confirm />
-    </View>
+        <OrderList />
+        <GenerateTokenButton navigation={navigation} />
+      </SafeAreaView>
+    </>
   );
 };
 const styles = StyleSheet.create({
@@ -359,13 +291,12 @@ const styles = StyleSheet.create({
   },
   confirmbutton: {
     backgroundColor: "#32BA7C",
-    padding: 10,
-    marginVertical: 10,
+    paddingVertical: 15,
+    marginVertical: 15,
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    marginLeft: 10,
-    marginRight: 10,
+    marginHorizontal: 16,
   },
 });
 
