@@ -4,7 +4,15 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import { Button, SafeAreaView, Text } from "react-native";
 
-import { Menu, Orders, Profile, OrderDetails, Cart, Token } from "./screens";
+import {
+  Menu,
+  Orders,
+  Profile,
+  OrderDetails,
+  Cart,
+  Token,
+  Wallet,
+} from "./screens";
 import MyTabBar from "./components/MyTabBar";
 
 const TestPage = ({ navigation }) => (
@@ -39,6 +47,7 @@ const RootStackScreen = () => {
       <RootStack.Screen name="Cart" component={Cart} />
       <RootStack.Screen name="OrderDetails" component={OrderDetails} />
       <RootStack.Screen name="Token" component={Token} />
+      <RootStack.Screen name="Wallet" component={Wallet} />
     </RootStack.Navigator>
   );
 };

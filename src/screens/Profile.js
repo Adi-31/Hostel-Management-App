@@ -64,7 +64,7 @@ const UserInfoCard = () => (
     </View>
   </View>
 );
-const Profile = () => {
+const Profile = ({ navigation }) => {
   return (
     <>
       <MyStatusBar backgroundColor={COLORS.blue} barStyle="light-content" />
@@ -72,12 +72,12 @@ const Profile = () => {
         <ProfileHeader />
         {/* <ProfileHeader />
         <ProfileContent />
-        <ProfileContent2 />
         <ProfileDue />
-        <ProfileTotDue /> */}
-        {/* <ProfileWallet /> */}
+      <ProfileTotDue /> */}
         {/* <ProfileLogout /> */}
         <UserInfoCard />
+        <ProfileContent2 />
+        <ProfileWallet navigation={navigation} />
       </View>
       <View
         style={{

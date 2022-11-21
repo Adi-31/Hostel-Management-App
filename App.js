@@ -8,7 +8,6 @@ import {
   StyleSheet,
 } from "react-native";
 import Routes from "./src/Routes";
-// import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "./src/constants/theme";
 
 const STATUSBAR_HEIGHT = StatusBar.currentHeight;
@@ -22,10 +21,6 @@ const MyStatusBar = ({ backgroundColor, ...props }) => (
   </View>
 );
 const App = () => {
-  // const isDarkMode = useColorScheme() === "light";
-  // const backgroundStyle = {
-  //   backgroundColor: isDarkMode ? "black" : "white",
-  // };
   return (
     <View style={styles.container}>
       {/* <MyStatusBar backgroundColor={COLORS.blue} barStyle="light-content" /> */}
