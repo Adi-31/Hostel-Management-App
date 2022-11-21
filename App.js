@@ -7,7 +7,7 @@ import {
   View,
   StyleSheet,
 } from "react-native";
-import Routes from "./src/navigation/Routes";
+import Routes from "./src/Routes";
 // import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "./src/constants/theme";
 

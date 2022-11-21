@@ -3,8 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import { Button, SafeAreaView, Text } from "react-native";
-import { Menu, Orders, Profile, OrderDetails, Cart, Token } from "../screens";
-import MyTabBar from "./MyTabBar";
+
+import { Menu, Orders, Profile, OrderDetails, Cart, Token } from "./screens";
+import MyTabBar from "./components/MyTabBar";
 
 const TestPage = ({ navigation }) => (
   <SafeAreaView>

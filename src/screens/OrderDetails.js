@@ -11,8 +11,9 @@ const OrderDetailsHeader = ({ route, navigation }) => {
     <View style={styles.orderDetailscontainer}>
       <View style={styles.orderDetailsbackbutton}>
         {
-          <TouchableOpacity onPress={() => navigation.navigate("Orders")}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <Text>
+              {/* change the icon here to svg */}
               <Ionicons name="arrow-back-outline" size={32} color="white" />
             </Text>
           </TouchableOpacity>
