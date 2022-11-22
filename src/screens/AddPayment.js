@@ -28,13 +28,19 @@ const AddPaymentHeader = ({ route, navigation }) => {
 
 const PayNow = () =>{
   return(
+    <TouchableOpacity >
     <View style={{padding:10,backgroundColor:'#32BA7C',
     marginBottom:35,borderRadius:10,alignItems:'center',justifyContent:'center',marginHorizontal:20}}>
+      
       <Text style={{color:'white',fontSize:18,fontWeight:'700'}}>
       Pay Now
       </Text>
+      
+     
     </View>
+    </TouchableOpacity>
   )
+
 }
 
 
