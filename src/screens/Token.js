@@ -1,20 +1,65 @@
-import { SafeAreaView, Text, View } from "react-native";
+import { SafeAreaView, Text, View , StyleSheet, TouchableOpacity} from "react-native";
 import React from "react";
 import MyStatusBar from "../components/MyStatusBar";
-import { COLORS } from "../constants/theme";
+import { COLORS , SIZES} from "../constants/theme";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
+
+const TokenHeader = ({ route, navigation }) => {
+  // const { Itemid } = route.params;
+  console.log(route);
+  return (
+    <View style={styles.orderDetailscontainer}>
+      <View style={styles.orderDetailsbackbutton}>
+        {
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text>
+              {/* change the icon here to svg */}
+              <Ionicons name="arrow-back-outline" size={32} color="white" />
+            </Text>
+          </TouchableOpacity>
+        }
+      </View>
+      <View style={styles.orderDetailscartheaderview}>
+        <Text style={styles.orderDetailscartheadertext}>Wallet</Text>
+      </View>
+    </View>
+  );
+};
+
+const BackToHome = () =>{
+  return (
+    <TouchableOpacity
+    style={{
+      backgroundColor: COLORS.white,
+      alignItems: "center",
+      justifyContent: "center",
+      padding: 10,
+      width:'100%',
+      // paddingHorizontal:80,
+      marginTop: 50,
+      borderRadius: 10,
+    }}
+  >
+    <Text style={{ fontSize: 20, fontWeight: "700", color: "#32BA7C" }}>
+    Back to Home
+    </Text>
+  </TouchableOpacity>
+  )
+}
 
 const Token = () => {
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: COLORS.green,
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <MyStatusBar backgroundColor={COLORS.green} barStyle="light-content" />
-      <View
+    <>
+    <MyStatusBar backgroundColor={COLORS.green} barStyle="light-content" />
+    <TokenHeader/>
+    <View style={ {flex:1,
+      flexDirection: "column",
+      backgroundColor: '#32BA7C'
+    }}>
+    {/* <View style={{flex:1, }} /> */}
+      <View style={{ flex: 5,  alignItems: 'center', justifyContent: 'center' }} >
+         <View
         style={{
           backgroundColor: "white",
           width: 250,
@@ -24,12 +69,57 @@ const Token = () => {
           justifyContent: "center",
         }}
       >
-        <Text style={{ color: COLORS.green, fontSize: 72, fontWeight: "700" }}>
+        <Text style={{ color: '#32BA7C', fontSize: 72, fontWeight: "700" }}>
           $130
         </Text>
       </View>
-    </SafeAreaView>
+      </View>
+      <View style={{ flex: 1,}} >
+       <TouchableOpacity style={{backgroundColor: "white",
+    paddingVertical: 15,
+    marginVertical: 15,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: 16,}}
+    >
+      <Text style={{ color: "#32BA7C", fontSize: 18, fontWeight: "700" }}>
+        BACK TO HOME
+      </Text>
+    </TouchableOpacity >
+        </View>
+    </View>
+    
+
+    </>
   );
 };
 
 export default Token;
+
+
+const styles = StyleSheet.create({
+  orderDetailscontainer: {
+    flexDirection: "row",
+    height: 75,
+    backgroundColor: COLORS.green,
+  },
+  orderDetailsbackbutton: {
+    backgroundColor: COLORS.green,
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "center",
+    paddingLeft: 10,
+  },
+  orderDetailscartheaderview: {
+    backgroundColor: COLORS.green,
+    flex: 8,
+    alignItems: "flex-start",
+    justifyContent: "center",
+  },
+  orderDetailscartheadertext: {
+    fontSize: SIZES.large * 2,
+    color: "white",
+    fontWeight: "bold",
+  },
+})
