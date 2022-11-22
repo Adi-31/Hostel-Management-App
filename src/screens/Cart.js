@@ -10,10 +10,13 @@ import {
   SafeAreaView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { SIZES } from "../constants/theme";
 import { ItemCounter } from "../components";
-import { BreakfastIcon, LunchIcon, DinnerIcon } from "../assets/icons";
+import {
+  BreakfastIcon,
+  LunchIcon,
+  DinnerIcon,
+  LeftArrow,
+} from "../assets/icons";
 import { SquareButton } from "../components/Button";
 import MyStatusBar from "../components/MyStatusBar";
 import { COLORS } from "../constants/theme";
@@ -72,9 +75,7 @@ const CartHeader = ({ navigation }) => {
     <View style={styles.cartHeadercontainer}>
       <View style={styles.cartHeaderbackbutton}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text>
-            <Ionicons name="arrow-back-outline" size={32} color="white" />
-          </Text>
+          <LeftArrow />
         </TouchableOpacity>
       </View>
       <View style={styles.cartheaderview}>
@@ -215,12 +216,12 @@ const styles = StyleSheet.create({
   },
   cartheaderview: {
     backgroundColor: "#3358F9",
-    flex: 8,
+    flex: 10,
     alignItems: "flex-start",
     justifyContent: "center",
   },
   cartheadertext: {
-    fontSize: SIZES.large * 2,
+    fontSize: 28,
     color: "white",
     fontWeight: "bold",
   },

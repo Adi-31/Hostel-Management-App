@@ -16,14 +16,6 @@ import {
 } from "./screens";
 import MyTabBar from "./components/MyTabBar";
 
-const TestPage = ({ navigation }) => (
-  <SafeAreaView>
-    <Text>HI</Text>
-    <Button title="Go to Cart" onPress={() => navigation.navigate("Cart")} />
-    <Button title="Go to TOken" onPress={() => navigation.navigate("Token")} />
-  </SafeAreaView>
-);
-
 const Tabs = createBottomTabNavigator();
 
 const TabsScreen = () => {
@@ -36,7 +28,6 @@ const TabsScreen = () => {
       <Tabs.Screen name="Menu" component={Menu} />
       <Tabs.Screen name="Orders" component={Orders} />
       <Tabs.Screen name="Profile" component={Profile} />
-      {/* <Tabs.Screen name="TestPage" component={TestPage} /> */}
     </Tabs.Navigator>
   );
 };
@@ -53,6 +44,7 @@ const RootStackScreen = () => {
     </RootStack.Navigator>
   );
 };
+
 const Routes = () => {
   return (
     <NavigationContainer>

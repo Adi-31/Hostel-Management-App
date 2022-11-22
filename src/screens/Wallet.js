@@ -114,9 +114,7 @@ const WalletContent = ({ navigation }) => {
         <AddMoney navigation={navigation} />
       </View>
       {/* bottom half screen  */}
-      <View style={{ flex: 1 }}>
-        <RecentTransation />
-      </View>
+      <View style={{ flex: 1 }}>{/* <RecentTransation /> */}</View>
     </View>
   );
 };
