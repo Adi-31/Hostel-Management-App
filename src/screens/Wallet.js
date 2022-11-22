@@ -42,8 +42,14 @@ const AddMoney = ({ navigation }) => {
 };
 const RecentTransation = () => {
   return (
-    <View style={{ backgroundColor: "white" }}>
-      <Text style={{ fontWeight: "700", fontSize: 18, paddingHorizontal: 10 }}>
+    <View
+      style={{
+        backgroundColor: "white",
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+      }}
+    >
+      <Text style={{ fontWeight: "700", fontSize: 22 }}>
         Recent Transactions 💸
       </Text>
     </View>
@@ -51,19 +57,22 @@ const RecentTransation = () => {
 };
 const WalletContent = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, paddingHorizontal: 15, paddingTop: 16 }}>
-      <View style={{ flex: 1, backgroundColor: "red" }}>
+    <View style={{ flex: 1 }}>
+      {/* first half screen  */}
+      <View
+        style={{
+          flex: 1,
+          // backgroundColor: "red",
+          paddingHorizontal: 15,
+          paddingTop: 16,
+        }}
+      >
         <Image
           source={walletcard}
           style={{
-            // width: 338,
             width: "100%",
-            // height: 180,
-            // marginHorizontal: 16,
             // marginTop: 10,
             borderRadius: 10,
-            // alignItems: "center",
-            // justifyContent: "center",
           }}
         />
         <Text
@@ -95,7 +104,7 @@ const WalletContent = ({ navigation }) => {
             position: "absolute",
             fontSize: 40,
             paddingHorizontal: 30,
-            paddingVertical: 128,
+            paddingVertical: 155,
             color: "#FFFFFF",
             fontWeight: "700",
           }}
@@ -103,7 +112,10 @@ const WalletContent = ({ navigation }) => {
           ₹1200
         </Text>
         <AddMoney navigation={navigation} />
-        {/* <RecentTransation /> */}
+      </View>
+      {/* bottom half screen  */}
+      <View style={{ flex: 1 }}>
+        <RecentTransation />
       </View>
     </View>
   );
