@@ -19,14 +19,7 @@ export const CircleButton = ({ navigation }) => {
     </TouchableOpacity>
   );
 };
-export const SquareButton = ({ handleOptDinner, optDinner }) => {
-  return (
-    <TouchableOpacity
-      style={styles.conatainer2}
-      onPress={handleOptDinner}
-    ></TouchableOpacity>
-  );
-};
+
 
 const styles = StyleSheet.create({
   container: {
@@ -38,16 +31,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  conatainer2: {
-    width: 21,
-    height: 21,
-    backgroundColor: "#FDEBBC",
-    marginTop: 5,
-    borderWidth: 1,
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: "#F5B80D",
-  },
+
 });

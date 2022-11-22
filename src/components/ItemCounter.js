@@ -8,8 +8,6 @@ const ItemCounter = ({ count, handleAddItems, handleRemoveItems }) => {
         backgroundColor: "#7676801F",
         flexDirection: "row",
         paddingHorizontal: 4,
-        // justifyContent: "center",
-        // alignItems: "center",
         width: 80,
         height: 40,
         borderRadius: 9,
@@ -18,7 +16,6 @@ const ItemCounter = ({ count, handleAddItems, handleRemoveItems }) => {
       <TouchableOpacity
         onPress={handleRemoveItems}
         style={{
-          //   backgroundColor: "red",
           flex: 1,
           width: "100%",
           height: "100%",
@@ -34,7 +31,6 @@ const ItemCounter = ({ count, handleAddItems, handleRemoveItems }) => {
       <TouchableOpacity
         onPress={handleAddItems}
         style={{
-          //   backgroundColor: "red",
           flex: 1,
           width: "100%",
           height: "100%",

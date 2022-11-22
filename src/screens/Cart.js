@@ -85,7 +85,6 @@ const CartHeader = ({ navigation }) => {
 };
 function OptDinner() {
   const [optDinner, setOptDinner] = useState(false);
-  //   const increment = () => setCount((count) => count + 1);
   const handleOptDinner = () => setOptDinner((optDinner) => !optDinner);
   return (
     <View style={styles.optDinnercontainer}>
@@ -101,19 +100,6 @@ function OptDinner() {
           </Text>
         </View>
       </View>
-      {/* <TouchableOpacity onPress={increment}>
-        <Text>Click me</Text>
-        <Text>{count}</Text>
-      </TouchableOpacity> */}
-      {/* {optDinner ? (
-        <TouchableOpacity>
-          <Text>Opted for dinner</Text>
-        </TouchableOpacity>
-      ) : (
-        <TouchableOpacity>
-          <Text>Not Opted for dinner</Text>
-        </TouchableOpacity>
-      )} */}
     </View>
   );
 }
@@ -125,7 +111,6 @@ const CartContent = ({ item }) => {
   const decrement = () => {
     setCount((count) => count - 1);
   };
-  //   console.log(item);
   return (
     <View style={styles.container}>
       <View style={styles.container1}>
@@ -168,7 +153,6 @@ const OrderList = () => (
       sections={listOfCart}
       keyExtractor={(item) => item.id}
       renderItem={CartContent}
-      // ListFooterComponent={CartContent2}
       showsVerticalScrollIndicator={false}
     />
   </View>
@@ -181,9 +165,7 @@ const Cart = ({ navigation, route }) => {
 
       <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
         <CartHeader navigation={navigation} />
-        {/* <View style={{ backgroundColor: "red", flex: 1 }}>
-        <OptDinner />
-    </View> */}
+
         <OrderList />
         <GenerateTokenButton navigation={navigation} />
       </SafeAreaView>
@@ -193,8 +175,7 @@ const Cart = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    //   marginVertical: 10
-    // paddingHorizontal: 10,
+
   },
   container1: {
     flex: 3,
@@ -276,7 +257,6 @@ const styles = StyleSheet.create({
   confirmCaution: {
     backgroundColor: "#D7F4E7",
     padding: 10,
-    // marginTop: 10,
     marginHorizontal: 10,
     marginTop: 10,
     borderRadius: 10,

@@ -6,6 +6,8 @@ import {
   FlatList,
 } from "react-native";
 import { Header } from "../components";
+import MyStatusBar from "../components/MyStatusBar";
+import { COLORS } from "../constants/theme";
 
 const OrderMenu = [
   {
@@ -70,9 +72,8 @@ const OrderCard = ({ item, navigate }) => {
   return (
     <View style={styles.container1}>
       <View style={styles.container2}>
-        <Text style={styles.ordertext}>Order ID : {element.id}</Text>
         <Text style={styles.ordertitle}>{element.title}</Text>
-        <Text style={styles.ordertext}>{element.foodtime}</Text>
+        <Text style={styles.ordertext}>Order ID : {element.id}</Text>
         <Text style={styles.ordertext}>{element.foodlist}</Text>
       </View>
       <View style={styles.container3}>
@@ -89,22 +90,29 @@ const OrderCard = ({ item, navigate }) => {
     </View>
   );
 };
-import MyStatusBar from "../components/MyStatusBar";
-import { COLORS } from "../constants/theme";
+
+const renderseperator =() => {
+  return (
+
+    <View style={{backgroundColor :'#d9d9d9', height :2 }}/>
+  )
+}
+
 const Orders = ({ navigation }) => {
   let { navigate } = navigation;
   return (
     <>
       <MyStatusBar backgroundColor={COLORS.blue} barStyle="light-content" />
 
-      <View>
         <Header navigation={navigation} />
+      <View style ={{flex : 1}}>
         <FlatList
           data={OrderMenu}
           keyExtractor={(item) => item.id}
           renderItem={(item) => <OrderCard navigate={navigate} item={item} />}
           style={styles.flatList}
           showsVerticalScrollIndicator={false}
+          ItemSeparatorComponent={renderseperator}
         />
       </View>
     </>
@@ -162,6 +170,6 @@ const styles = StyleSheet.create({
   flatList: {
     backgroundColor: "white",
     paddingHorizontal: 10,
-    marginBottom: 60,
-  },
+    
+    },
 });
