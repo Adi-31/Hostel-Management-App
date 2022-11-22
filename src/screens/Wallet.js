@@ -1,4 +1,4 @@
-import { View, Text,TouchableOpacity, StyleSheet, Image } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import React from "react";
 import MyStatusBar from "../components/MyStatusBar";
 import { COLORS } from "../constants/theme";
@@ -28,47 +28,92 @@ const WalletHeader = ({ route, navigation }) => {
   );
 };
 
-const AddMoney = () => {
+const AddMoney = ({ navigation }) => {
   return (
     <TouchableOpacity
       style={styles.confirmbutton}
+      onPress={() => navigation.navigate("AddPayment")}
     >
-    <Text style={{ color: "white", fontSize: 18, fontWeight: "700" }}>
-        + Add Money 
+      <Text style={{ color: "white", fontSize: 18, fontWeight: "700" }}>
+        + Add Money
       </Text>
     </TouchableOpacity>
   );
 };
-const RecentTransation =() =>{
+const RecentTransation = () => {
   return (
-    <View style ={{backgroundColor : "white"}}>
-      <Text style ={{fontWeight : '700', fontSize : 18, paddingHorizontal: 10}}>Recent Transactions 💸</Text>
+    <View style={{ backgroundColor: "white" }}>
+      <Text style={{ fontWeight: "700", fontSize: 18, paddingHorizontal: 10 }}>
+        Recent Transactions 💸
+      </Text>
     </View>
-  )
-}
-const WalletContent = () =>{
-  return (
-   <View >
-      <View >
-        <Image source={walletcard} style={{width : 338, height :180, margin : 10,marginTop :10, borderRadius:10, alignItems: "center",
-    justifyContent: "center",}}/>
-        <Text style={{position: 'absolute', fontSize: 24, paddingHorizontal : 30, paddingVertical : 30, color : "#FFFFFF", fontWeight: '700', }}>eCanteen Wallet</Text>
-        <Text style={{position: 'absolute', fontSize: 14, paddingHorizontal : 30, paddingVertical : 105, color : "#FFFFFF", fontWeight: '400', }}>Wallet Balance</Text>
-        <Text style={{position: 'absolute', fontSize: 40, paddingHorizontal : 30, paddingVertical : 118 , color : "#FFFFFF", fontWeight: '700', }}>₹1200</Text>
-        <AddMoney/>
-        <RecentTransation/>
-      </View>
-   </View>
   );
 };
-const Wallet = ({navigation}) => {
+const WalletContent = ({ navigation }) => {
+  return (
+    <View style={{ flex: 1, paddingHorizontal: 15, paddingTop: 16 }}>
+      <View style={{ flex: 1, backgroundColor: "red" }}>
+        <Image
+          source={walletcard}
+          style={{
+            // width: 338,
+            width: "100%",
+            // height: 180,
+            // marginHorizontal: 16,
+            // marginTop: 10,
+            borderRadius: 10,
+            // alignItems: "center",
+            // justifyContent: "center",
+          }}
+        />
+        <Text
+          style={{
+            position: "absolute",
+            fontSize: 24,
+            paddingHorizontal: 30,
+            paddingVertical: 30,
+            color: "#FFFFFF",
+            fontWeight: "700",
+          }}
+        >
+          eCanteen Wallet
+        </Text>
+        <Text
+          style={{
+            position: "absolute",
+            fontSize: 14,
+            paddingHorizontal: 30,
+            paddingVertical: 115,
+            color: "#FFFFFF",
+            fontWeight: "400",
+          }}
+        >
+          Wallet Balance
+        </Text>
+        <Text
+          style={{
+            position: "absolute",
+            fontSize: 40,
+            paddingHorizontal: 30,
+            paddingVertical: 128,
+            color: "#FFFFFF",
+            fontWeight: "700",
+          }}
+        >
+          ₹1200
+        </Text>
+        <AddMoney navigation={navigation} />
+        {/* <RecentTransation /> */}
+      </View>
+    </View>
+  );
+};
+const Wallet = ({ navigation }) => {
   return (
     <>
       <MyStatusBar backgroundColor={COLORS.blue} barStyle="light-content" />
-      <View>
-        <WalletHeader navigation={navigation}/>
-        <WalletContent/>
-      </View>
+      <WalletHeader navigation={navigation} />
+      <WalletContent navigation={navigation} />
     </>
   );
 };
@@ -106,8 +151,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    marginHorizontal: 14,
-    
+    // marginHorizontal: 14,
   },
-
-})
+});

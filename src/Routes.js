@@ -12,6 +12,7 @@ import {
   Cart,
   Token,
   Wallet,
+  AddPayment,
 } from "./screens";
 import MyTabBar from "./components/MyTabBar";
 
@@ -48,6 +49,7 @@ const RootStackScreen = () => {
       <RootStack.Screen name="OrderDetails" component={OrderDetails} />
       <RootStack.Screen name="Token" component={Token} />
       <RootStack.Screen name="Wallet" component={Wallet} />
+      <RootStack.Screen name="AddPayment" component={AddPayment} />
     </RootStack.Navigator>
   );
 };
