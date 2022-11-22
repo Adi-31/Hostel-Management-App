@@ -26,12 +26,47 @@ const AddPaymentHeader = ({ route, navigation }) => {
   );
 };
 
+const PayNow = () =>{
+  return(
+    <View style={{padding:10,backgroundColor:'#32BA7C',
+    marginBottom:35,borderRadius:10,alignItems:'center',justifyContent:'center',marginHorizontal:20}}>
+      <Text style={{color:'white',fontSize:18,fontWeight:'700'}}>
+      Pay Now
+      </Text>
+    </View>
+  )
+}
+
+
+const PaymentContent = () => {
+return (
+  <View style={{flex:1}}>
+    <View style={{flex:2}}>
+
+    </View>
+
+    <View style={{flex:3,alignItems:'center'}}>
+      <Text style ={{color:'#0C0F17',opacity:0.5,fontSize:14}}>You’re Paying</Text>
+      <Text style={{color:'black',fontSize:48,fontWeight:'700'}}>₹12,000</Text>
+      
+    </View>
+  
+    <PayNow />
+
+  </View>
+)
+
+}
+
+
 const AddPayment = ({ navigation }) => {
   return (
     <>
       <MyStatusBar backgroundColor={COLORS.blue} barStyle="light-content" />
       <AddPaymentHeader />
-      <Text>Add payment page</Text>
+      <PaymentContent />
+      
+
     </>
   );
 };
@@ -54,11 +89,13 @@ const styles = StyleSheet.create({
     flex: 8,
     alignItems: "flex-start",
     justifyContent: "center",
+    
   },
   orderDetailscartheadertext: {
     fontSize: SIZES.large * 2,
     color: "white",
-    fontWeight: "bold",
+    fontSize:24,
+    fontWeight:'700'
   },
 });
 
