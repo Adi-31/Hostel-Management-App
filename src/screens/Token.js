@@ -1,9 +1,14 @@
-import { SafeAreaView, Text, View , StyleSheet, TouchableOpacity} from "react-native";
+import {
+  SafeAreaView,
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import MyStatusBar from "../components/MyStatusBar";
-import { COLORS , SIZES} from "../constants/theme";
-import Ionicons from "@expo/vector-icons/Ionicons";
-
+import { COLORS, SIZES } from "../constants/theme";
+import { LeftArrow } from "../assets/icons";
 
 const TokenHeader = ({ route, navigation }) => {
   // const { Itemid } = route.params;
@@ -14,8 +19,7 @@ const TokenHeader = ({ route, navigation }) => {
         {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Text>
-              {/* change the icon here to svg */}
-              <Ionicons name="arrow-back-outline" size={32} color="white" />
+              <LeftArrow />
             </Text>
           </TouchableOpacity>
         }
@@ -27,76 +31,76 @@ const TokenHeader = ({ route, navigation }) => {
   );
 };
 
-const BackToHome = () =>{
+const BackToHome = () => {
   return (
     <TouchableOpacity
-    style={{
-      backgroundColor: COLORS.white,
-      alignItems: "center",
-      justifyContent: "center",
-      padding: 10,
-      width:'100%',
-      // paddingHorizontal:80,
-      marginTop: 50,
-      borderRadius: 10,
-    }}
-  >
-    <Text style={{ fontSize: 20, fontWeight: "700", color: "#32BA7C" }}>
-    Back to Home
-    </Text>
-  </TouchableOpacity>
-  )
-}
+      style={{
+        backgroundColor: COLORS.white,
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 10,
+        width: "100%",
+        marginTop: 50,
+        borderRadius: 10,
+      }}
+    >
+      <Text style={{ fontSize: 20, fontWeight: "700", color: "#32BA7C" }}>
+        Back to Home
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
-const Token = () => {
+const Token = ({ navigation }) => {
   return (
     <>
-    <MyStatusBar backgroundColor={COLORS.green} barStyle="light-content" />
-    <TokenHeader/>
-    <View style={ {flex:1,
-      flexDirection: "column",
-      backgroundColor: '#32BA7C'
-    }}>
-    {/* <View style={{flex:1, }} /> */}
-      <View style={{ flex: 5,  alignItems: 'center', justifyContent: 'center' }} >
-         <View
-        style={{
-          backgroundColor: "white",
-          width: 250,
-          height: 250,
-          borderRadius: 25,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+      <MyStatusBar backgroundColor={COLORS.green} barStyle="light-content" />
+      <TokenHeader navigation={navigation} />
+      <View
+        style={{ flex: 1, flexDirection: "column", backgroundColor: "#32BA7C" }}
       >
-        <Text style={{ color: '#32BA7C', fontSize: 72, fontWeight: "700" }}>
-          $130
-        </Text>
-      </View>
-      </View>
-      <View style={{ flex: 1,}} >
-       <TouchableOpacity style={{backgroundColor: "white",
-    paddingVertical: 15,
-    marginVertical: 15,
-    borderRadius: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    marginHorizontal: 16,}}
-    >
-      <Text style={{ color: "#32BA7C", fontSize: 18, fontWeight: "700" }}>
-        BACK TO HOME
-      </Text>
-    </TouchableOpacity >
+        {/* <View style={{flex:1, }} /> */}
+        <View
+          style={{ flex: 5, alignItems: "center", justifyContent: "center" }}
+        >
+          <View
+            style={{
+              backgroundColor: "white",
+              width: 250,
+              height: 250,
+              borderRadius: 25,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "#32BA7C", fontSize: 72, fontWeight: "700" }}>
+              $130
+            </Text>
+          </View>
         </View>
-    </View>
-    
-
+        <View style={{ flex: 1 }}>
+          <TouchableOpacity
+            style={{
+              backgroundColor: "white",
+              paddingVertical: 15,
+              marginVertical: 15,
+              borderRadius: 10,
+              alignItems: "center",
+              justifyContent: "center",
+              marginHorizontal: 16,
+            }}
+          >
+            <Text style={{ color: "#32BA7C", fontSize: 18, fontWeight: "700" }}>
+              BACK TO HOME
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </>
   );
 };
 
 export default Token;
-
 
 const styles = StyleSheet.create({
   orderDetailscontainer: {
@@ -122,4 +126,4 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
   },
-})
+});

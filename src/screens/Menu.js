@@ -1,5 +1,4 @@
 import { View, StyleSheet } from "react-native";
-import { useEffect } from "react";
 import { Header, ScrollableMenu, ViewCart } from "../components";
 import MyStatusBar from "../components/MyStatusBar";
 import { COLORS } from "../constants/theme";

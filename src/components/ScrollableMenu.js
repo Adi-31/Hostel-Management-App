@@ -119,7 +119,6 @@ const DATA = [
 ];
 
 const MenuItem = ({ item }) => {
-  const [items, setItems] = useState(2);
   const [count, setCount] = useState(0);
   const handleAddItems = () => {
     setCount((count) => count + 1);
@@ -129,23 +128,9 @@ const MenuItem = ({ item }) => {
   };
 
   return (
-    <View
-      style={{
-        marginVertical: 4,
-        paddingLeft: 10,
-        flexDirection: "row",
-        flexWrap: "wrap",
-      }}
-    >
+    <View style={styles.menuItemBox}>
       {/* left item  */}
-      <View
-        style={{
-          padding: 10,
-          justifyContent: "center",
-          // backgroundColor: COLORS.yellow,
-          flexWrap: "wrap",
-        }}
-      >
+      <View style={styles.leftItem}>
         <Image
           source={item.img}
           resizeMode="contain"
@@ -153,41 +138,13 @@ const MenuItem = ({ item }) => {
         />
       </View>
       {/* center item  */}
-      <View
-        style={{
-          flex: 2,
-          // backgroundColor: "cyan",
-          flexDirection: "column",
-          paddingVertical: 10,
-          paddingHorizontal: 10,
-          flexWrap: "wrap",
-        }}
-      >
-        <Text style={{ fontSize: 16, fontWeight: "700" }}>{item.foodItem}</Text>
-
-        <Text style={{ fontSize: 12, fontWeight: "400", marginBottom: 4 }}>
-          {item.details}
-        </Text>
-
-        <Text
-          style={{
-            fontSize: 24,
-            fontWeight: "700",
-            color: COLORS.green,
-          }}
-        >
-          ₹{item.cost}
-        </Text>
+      <View style={styles.centerItem}>
+        <Text style={styles.itemTitle}>{item.foodItem}</Text>
+        <Text style={styles.detailsText}>{item.details}</Text>
+        <Text style={styles.costText}>₹{item.cost}</Text>
       </View>
       {/* right item  */}
-      <View
-        style={{
-          flex: 1,
-          // backgroundColor: "pink",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <View style={styles.rightItem}>
         {count === 0 ? (
           <TouchableOpacity onPress={handleAddItems}>
             <GreenButton />
@@ -267,8 +224,7 @@ const styles = StyleSheet.create({
   },
   sectionHeader: {
     fontSize: 32,
-    // backgroundColor: "white",
-    // paddingTop: 10,
+
     padding: 7,
   },
   title: {
@@ -287,6 +243,36 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+  },
+  leftItem: {
+    padding: 10,
+    justifyContent: "center",
+    flexWrap: "wrap",
+  },
+  centerItem: {
+    flex: 2,
+    flexDirection: "column",
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    flexWrap: "wrap",
+  },
+  rightItem: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  costText: {
+    fontSize: 24,
+    fontWeight: "700",
+    color: COLORS.green,
+  },
+  detailsText: { fontSize: 12, fontWeight: "400", marginBottom: 4 },
+  itemTitle: { fontSize: 16, fontWeight: "700" },
+  menuItemBox: {
+    marginVertical: 4,
+    paddingLeft: 10,
+    flexDirection: "row",
+    flexWrap: "wrap",
   },
 });
 

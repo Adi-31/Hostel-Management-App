@@ -1,8 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import MyStatusBar from "../components/MyStatusBar";
 import { COLORS } from "../constants/theme";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { SIZES } from "../constants/theme";
+import { LeftArrow } from "../assets/icons";
 
 const AddPaymentHeader = ({ route, navigation }) => {
   // const { Itemid } = route.params;
@@ -13,8 +12,7 @@ const AddPaymentHeader = ({ route, navigation }) => {
         {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Text>
-              {/* change the icon here to svg */}
-              <Ionicons name="arrow-back-outline" size={32} color="white" />
+              <LeftArrow />
             </Text>
           </TouchableOpacity>
         }
@@ -26,6 +24,7 @@ const AddPaymentHeader = ({ route, navigation }) => {
   );
 };
 
+<<<<<<< HEAD
 const PayNow = () =>{
   return(
     <TouchableOpacity >
@@ -34,45 +33,63 @@ const PayNow = () =>{
       
       <Text style={{color:'white',fontSize:18,fontWeight:'700'}}>
       Pay Now
+=======
+const PayNow = () => {
+  return (
+    <View
+      style={{
+        padding: 10,
+        backgroundColor: "#32BA7C",
+        marginBottom: 35,
+        borderRadius: 10,
+        alignItems: "center",
+        justifyContent: "center",
+        marginHorizontal: 20,
+      }}
+    >
+      <Text style={{ color: "white", fontSize: 18, fontWeight: "700" }}>
+        Pay Now
+>>>>>>> 87b7494f0d1bfd6a48c61204ee7da0fcbc895f75
       </Text>
       
      
     </View>
+<<<<<<< HEAD
     </TouchableOpacity>
   )
 
 }
 
+=======
+  );
+};
+>>>>>>> 87b7494f0d1bfd6a48c61204ee7da0fcbc895f75
 
 const PaymentContent = () => {
-return (
-  <View style={{flex:1}}>
-    <View style={{flex:2}}>
+  return (
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 2 }}></View>
 
+      <View style={{ flex: 3, alignItems: "center" }}>
+        <Text style={{ color: "#0C0F17", opacity: 0.5, fontSize: 14 }}>
+          You’re Paying
+        </Text>
+        <Text style={{ color: "black", fontSize: 48, fontWeight: "700" }}>
+          ₹12,000
+        </Text>
+      </View>
+
+      <PayNow />
     </View>
-
-    <View style={{flex:3,alignItems:'center'}}>
-      <Text style ={{color:'#0C0F17',opacity:0.5,fontSize:14}}>You’re Paying</Text>
-      <Text style={{color:'black',fontSize:48,fontWeight:'700'}}>₹12,000</Text>
-      
-    </View>
-  
-    <PayNow />
-
-  </View>
-)
-
-}
-
+  );
+};
 
 const AddPayment = ({ navigation }) => {
   return (
     <>
       <MyStatusBar backgroundColor={COLORS.blue} barStyle="light-content" />
-      <AddPaymentHeader />
+      <AddPaymentHeader navigation={navigation} />
       <PaymentContent />
-      
-
     </>
   );
 };
@@ -92,16 +109,14 @@ const styles = StyleSheet.create({
   },
   orderDetailscartheaderview: {
     backgroundColor: "#3358F9",
-    flex: 8,
+    flex: 10,
     alignItems: "flex-start",
     justifyContent: "center",
-    
   },
   orderDetailscartheadertext: {
-    fontSize: SIZES.large * 2,
     color: "white",
-    fontSize:24,
-    fontWeight:'700'
+    fontSize: 24,
+    fontWeight: "700",
   },
 });
 

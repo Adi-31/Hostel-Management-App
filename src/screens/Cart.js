@@ -3,18 +3,12 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  ScrollView,
-  FlatList,
   SectionList,
-  Button,
   SafeAreaView,
 } from "react-native";
-import React, { useEffect, useState } from "react";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { SIZES } from "../constants/theme";
+import { useState } from "react";
 import { ItemCounter } from "../components";
-import { BreakfastIcon, LunchIcon, DinnerIcon } from "../assets/icons";
-import { SquareButton } from "../components/Button";
+import { LeftArrow } from "../assets/icons";
 import MyStatusBar from "../components/MyStatusBar";
 import { COLORS } from "../constants/theme";
 
@@ -72,9 +66,7 @@ const CartHeader = ({ navigation }) => {
     <View style={styles.cartHeadercontainer}>
       <View style={styles.cartHeaderbackbutton}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text>
-            <Ionicons name="arrow-back-outline" size={32} color="white" />
-          </Text>
+          <LeftArrow />
         </TouchableOpacity>
       </View>
       <View style={styles.cartheaderview}>
@@ -83,26 +75,7 @@ const CartHeader = ({ navigation }) => {
     </View>
   );
 };
-function OptDinner() {
-  const [optDinner, setOptDinner] = useState(false);
-  const handleOptDinner = () => setOptDinner((optDinner) => !optDinner);
-  return (
-    <View style={styles.optDinnercontainer}>
-      <View style={styles.optDinnercontainer1}>
-        <View style={styles.optDinnerbuttonview}>
-          <SquareButton handleOptDinner={handleOptDinner} />
-          <Text style={styles.optDinneropt}> Opt for Dinner 🍛</Text>
-        </View>
-        <View style={styles.optDinnerfoodview}>
-          <Text style={styles.optDinnerfoodtext}>
-            The Food marked as Dinner in your Current Cart will be marked as
-            your preference for dinner too
-          </Text>
-        </View>
-      </View>
-    </View>
-  );
-}
+
 const CartContent = ({ item }) => {
   const [count, setCount] = useState(0);
   const increment = () => {
@@ -134,14 +107,14 @@ const CartContent = ({ item }) => {
     </View>
   );
 };
-const GenerateTokenButton = ({ navigation }) => {
+const ConfirmOrder = ({ navigation }) => {
   return (
     <TouchableOpacity
       style={styles.confirmbutton}
       onPress={() => navigation.navigate("Token")}
     >
       <Text style={{ color: "white", fontSize: 18, fontWeight: "700" }}>
-        Generate Token - $130
+        CONFIRM ORDER
       </Text>
     </TouchableOpacity>
   );
@@ -167,7 +140,7 @@ const Cart = ({ navigation, route }) => {
         <CartHeader navigation={navigation} />
 
         <OrderList />
-        <GenerateTokenButton navigation={navigation} />
+        <ConfirmOrder navigation={navigation} />
       </SafeAreaView>
     </>
   );
@@ -175,7 +148,6 @@ const Cart = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-
   },
   container1: {
     flex: 3,
@@ -215,12 +187,12 @@ const styles = StyleSheet.create({
   },
   cartheaderview: {
     backgroundColor: "#3358F9",
-    flex: 8,
+    flex: 10,
     alignItems: "flex-start",
     justifyContent: "center",
   },
   cartheadertext: {
-    fontSize: SIZES.large * 2,
+    fontSize: 28,
     color: "white",
     fontWeight: "bold",
   },
