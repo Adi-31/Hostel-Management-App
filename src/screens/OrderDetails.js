@@ -6,9 +6,9 @@ import {
   SafeAreaView,
 } from "react-native";
 import { SIZES } from "../constants/theme";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import MyStatusBar from "../components/MyStatusBar";
 import { COLORS } from "../constants/theme";
+import { LeftArrow } from "../assets/icons";
 
 const OrderDetailsHeader = ({ route, navigation }) => {
   // const { Itemid } = route.params;
@@ -19,8 +19,7 @@ const OrderDetailsHeader = ({ route, navigation }) => {
         {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Text>
-              {/* change the icon here to svg */}
-              <Ionicons name="arrow-back-outline" size={32} color="white" />
+              <LeftArrow />
             </Text>
           </TouchableOpacity>
         }
@@ -155,7 +154,7 @@ const OrderDetails = ({ navigation }) => {
 
       <OrderDetailsHeader navigation={navigation} />
       <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ flex: 1, backgroundColor: "red" }}>
+        <View style={{ flex: 1 }}>
           <View style={styles.container}>
             <Text style={styles.containerText}>BILL DETAILS</Text>
             <OrderDetailsContent />
@@ -164,7 +163,6 @@ const OrderDetails = ({ navigation }) => {
         <View
           style={{
             flex: 1,
-            backgroundColor: "darkorange",
             justifyContent: "flex-end",
           }}
         >

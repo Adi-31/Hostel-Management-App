@@ -2,9 +2,9 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import React from "react";
 import MyStatusBar from "../components/MyStatusBar";
 import { COLORS } from "../constants/theme";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import { SIZES } from "../constants/theme";
 import walletcard from "../assets/images/walletcard.png";
+import { LeftArrow } from "../assets/icons";
 
 const WalletHeader = ({ route, navigation }) => {
   // const { Itemid } = route.params;
@@ -15,8 +15,7 @@ const WalletHeader = ({ route, navigation }) => {
         {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Text>
-              {/* change the icon here to svg */}
-              <Ionicons name="arrow-back-outline" size={32} color="white" />
+              <LeftArrow />
             </Text>
           </TouchableOpacity>
         }
